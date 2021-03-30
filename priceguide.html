@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>CSOKI Promo Guide</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<style>
+    .phoneCollapse {
+        margin: 20px;
+    }
+    .accordion .fa{
+        margin-right: 0.5rem;
+    }
+    table {
+        border: 2px solid black;
+        width: 100%;
+        text-align: center;
+    }
+    tr {
+        border: 2px solid black;
+        border-bottom: 3px solid black;
+    }
+    th {
+        border: 2px solid black;
+    }
+    td {
+        border: 2px solid black
+    }
+    .legend {
+        width:100%;
+        height:100px;
+        border:2px solid black;
+        text-align: center;
+        line-height: 50px;
+        font-size: 40px;
+        background-color: black;
+        color: white;
+        text-shadow: 1px 1px red, -1px 1px red, 1px -1px red, -1px -1px red;
+        
+    }
+    .storage {
+        font-size: 12px;
+        font-weight: bold;
+    }
+    .main {
+        font-weight: bold;
+    }
+    .promo-button {
+        font-size: 15px;
+        line-height: 15px;
+    }
+    .tier {
+        line-height: 10px;
+        font-size: 10px;
+    } 
+    .sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 2;
+    }
+    .sticky + .phoneCollapse {
+    padding-top: 102px;
+    }
+    .upgpromo,
+    .newpromo,
+    .upgpromoprice,
+    .newpromoprice {
+        border-bottom: 0.5px solid black;
+    }
+</style>
+<script>
+    $(document).ready(function(){
+        // Add minus icon for collapse element which is open by default
+        $(".collapse.show").each(function(){
+        	$(this).prev(".card-header").find(".fa").addClass("fa-minus").removeClass("fa-plus");
+        });
+        
+        // Toggle plus minus icon on show hide of collapse element
+        $(".collapse").on('show.bs.collapse', function(){
+        	$(this).prev(".card-header").find(".fa").removeClass("fa-plus").addClass("fa-minus");
+        }).on('hide.bs.collapse', function(){
+        	$(this).prev(".card-header").find(".fa").removeClass("fa-minus").addClass("fa-plus");
+        });
+    });
+</script>
+</head>
+<body>
+    <div class = 'legend' id = 'legend'><span class = 'title'>CSOKI Price Guide</span><br>
+        <button class = 'promo-button' id = 'premBtn' onclick = 'runPremium()'>Premium Unl</button>
+        <button class = 'promo-button' id = 'anyBtn' onclick = 'runAny()'>Any Unl</button>
+        <button class = 'promo-button' id = 'anyPlanBtn' onclick = 'runAnyPlan()'>Any Plan</button>
+    </div>
+    <div class="phoneCollapse">
+        <div class="accordion" id="accordionExample">
+            <div class="card">
+                <div class="card-header" id="headingZero">
+                    <h2 class="mb-0">
+                        <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#priority"><i class="fa fa-plus"></i>Priority Devices</button>									
+                    </h2>
+                </div>
+                <div id="priority" class="collapse" aria-labelledby="headingZero" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <table id = 'priorityTable'>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h2 class="mb-0">
+                    <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#apple"><i class="fa fa-plus"></i>Apple</button>									
+                </h2>
+            </div>
+            <div id="apple" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                    <table id = 'appleTable'>
+                        <tr>
+                            <th>Model</th>
+                            <th>DPP Max</th>
+                            <th>Max Monthly(24/30)</th>
+                            <th>Vaps</th>
+                            <th>Upgrade Promos</th>
+                            <th>Cost with Upg Promos</th>
+                            <th>New Promos</th>
+                            <th>Cost with New Promos</th>
+                        </tr> 
+                    </table>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h2 class="mb-0">
+                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#samsung"><i class="fa fa-plus"></i>Samsung</button>
+                </h2>
+            </div>
+            <div id="samsung" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">
+                    <table id = 'samsungTable'>
+                        <tr>
+                            <th>Model</th>
+                            <th>DPP Max</th>
+                            <th>DPP Max Monthly</th>
+                            <th>Vaps</th>
+                            <th>Upgrade Promos</th>
+                            <th>Cost with Upg Promos</th>
+                            <th>New Promos</th>
+                            <th>Cost with New Promos</th>
+                        </tr>      
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h2 class="mb-0">
+                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#lg"><i class="fa fa-plus"></i>LG</button>                     
+                </h2>
+            </div>
+            <div id="lg" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body">
+                    <table id = 'lgTable'>
+                        <tr>
+                            <th>Model</th>
+                            <th>DPP Max</th>
+                            <th>DPP Max Monthly</th>
+                            <th>Vaps</th>
+                            <th>Upgrade Promos</th>
+                            <th>Cost with Upg Promos</th>
+                            <th>New Promos</th>
+                            <th>Cost with New Promos</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingFour">
+                <h2 class="mb-0">
+                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#moto"><i class="fa fa-plus"></i>Motorola</button>                     
+                </h2>
+            </div>
+            <div id="moto" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                <div class="card-body">
+                    <table id = 'motoTable'>
+                        <tr>
+                            <th>Model</th>
+                            <th>DPP Max</th>
+                            <th>DPP Max Monthly</th>
+                            <th>Vaps</th>
+                            <th>Upgrade Promos</th>
+                            <th>Cost with Upg Promos</th>
+                            <th>New Promos</th>
+                            <th>Cost with New Promos</th>
+                        </tr>   
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingFive">
+                <h2 class="mb-0">
+                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#google"><i class="fa fa-plus"></i>Google</button>                     
+                </h2>
+            </div>
+            <div id="google" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                <div class="card-body">
+                    <table id = 'googleTable'>
+                        <tr>
+                            <th>Model</th>
+                            <th>DPP Max</th>
+                            <th>DPP Max Monthly</th>
+                            <th>Vaps</th>
+                            <th>Upgrade Promos</th>
+                            <th>Cost with Upg Promos</th>
+                            <th>New Promos</th>
+                            <th>Cost with New Promos</th>
+                        </tr>   
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingSix">
+                <h2 class="mb-0">
+                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#other"><i class="fa fa-plus"></i>Others/EOL Phones</button>                     
+                </h2>
+            </div>
+            <div id="other" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+                <div class="card-body">
+                    <table id = 'otherTable'>
+                        <tr>
+                            <th>Model</th>
+                            <th>DPP Max</th>
+                            <th>DPP Max Monthly</th>
+                            <th>Vaps</th>
+                            <th>Upgrade Promos</th>
+                            <th>Cost with Upg Promos</th>
+                            <th>New Promos</th>
+                            <th>Cost with New Promos</th>
+                        </tr>    
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingSeven">
+                <h2 class="mb-0">
+                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#tablet"><i class="fa fa-plus"></i>Tablets</button>                     
+                </h2>
+            </div>
+            <div id="tablet" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
+                <div class="card-body">
+                    <table id = 'tabletTable'>
+                        <tr>
+                            <th>Model</th>
+                            <th>DPP Max</th>
+                            <th>DPP Max Monthly</th>
+                            <th>Vaps</th>
+                            <th>Upgrade Promos</th>
+                            <th>Cost with Upg Promos</th>
+                            <th>New Promos</th>
+                            <th>Cost with New Promos</th>
+                        </tr>
+                    </table>        
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingEight">
+                <h2 class="mb-0">
+                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#connected"><i class="fa fa-plus"></i>Connected Devices</button>                     
+                </h2>
+            </div>
+            <div id="connected" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
+                <div class="card-body">
+                    <table id = 'connectedTable'>
+                        <tr class = 'main'>
+                            <th>Model</th>
+                            <th>DPP Max</th>
+                            <th>DPP Max Monthly</th>
+                            <th>Vaps</th>
+                            <th>Upgrade Promos</th>
+                            <th>Cost with Upg Promos</th>
+                            <th>New Promos</th>
+                            <th>Cost with New Promos</th>
+                        </tr>   
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingNine">
+                <h2 class="mb-0">
+                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#basic"><i class="fa fa-plus"></i>Basic Phones</button>                     
+                </h2>
+            </div>
+            <div id="basic" class="collapse" aria-labelledby="headingNine" data-parent="#accordionExample">
+                <div class="card-body">
+                    <table id = 'basicTable'>
+                        <tr>
+                            <th>Model</th>
+                            <th>DPP Max</th>
+                            <th>DPP Max Monthly</th>
+                            <th>Vaps</th>
+                        </tr>
+                        <tr class = 'main'>
+                            <td><a target = 'blank' href = 'https://www.phonescoop.com/phones/phone.php?p=5357' target = 'blank'>Alcatel Go Flip V</a></td>
+                            <td><strong>$130</strong></td>
+                            <td><strong>5.42</strong></td>
+                            <td>2.4</td>
+                        </tr>
+                        <tr class = 'main'>
+                            <td><a target = 'blank' href = 'https://www.phonescoop.com/phones/phone.php?p=6228' target ='blank'>Kyocera DuraXV Extreme LTE</a></td>
+                            <td><strong>$270</strong></td>
+                            <td><strong>11.25</strong></td>
+                            <td>2.4</td>
+                        </tr>
+                        <tr class = 'main'>
+                            <td><a target = 'blank' href = 'https://phonecurious.com/orbic-journey-v-review/' target = 'blank'>Orbic Journey V</a></td>
+                            <td><strong>$130</strong></td>
+                            <td><strong>5.42</strong></td>
+                            <td>2.4</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingTen">
+                <h2 class="mb-0">
+                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#prepaid"><i class="fa fa-plus"></i>Prepaid</button>                     
+                </h2>
+            </div>
+            <div id="prepaid" class="collapse" aria-labelledby="headingTen" data-parent="#accordionExample">
+                <div class="card-body">
+                    <table id = 'prepaidTable'>
+                        <tr>
+                            <th>Model</th>
+                            <th>Cost</th>
+                            <th>Act Fee</th>
+                            <th>Vaps</th>
+                        </tr> 
+                        <tr class = 'main'>
+                            <td>Blade Advantage 2 PPD</td>
+                            <td><strong>$59.99</strong></td>
+                            <td><strong>35</strong></td>
+                            <td>5.8</td>
+                        </tr>  
+                        <tr class = 'main'>
+                            <td>Alcatel Avalon V PPD</td>
+                            <td><strong>$79.99</strong></td>
+                            <td><strong>35</strong></td>
+                            <td>5.8</td>
+                        </tr>
+                        <tr class = 'main'>
+                            <td>Orbic Wonder PPD</td>
+                            <td><strong>$99.99</strong></td>
+                            <td><strong>35</strong></td>
+                            <td>5.8</td>
+                        </tr> 
+                        <tr class = 'main'>
+                            <td>Nokia 3V PPD</td>
+                            <td><strong>$109.99</strong></td>
+                            <td><strong>35</strong></td>
+                            <td>5.8</td>
+                        </tr>   
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+  
+// Object format for phones
+// phone = { name: 'name', familyname: 'familyName', aboutwebsite: 'aboutWebsite', storage: [storage], class: 'class', price: [price], dpp30: true/false, vaps: vaps, upgradepromos: [], newpromos: []}
+//    
+// Begin list of objects here:
+
+Iphone12ProMax = { name: 'Iphone 12 Pro Max', familyname: 'iphone12', aboutwebsite: 'https://www.apple.com/iphone-12-pro/?afid=p238%7Cs1S1i1fjK-dc_mtid_20925d2q39172_pcrid_499637092975_pgrid_117267373387_&cid=wwa-us-kwgo-iphone--slid---Brand-iPhone12ProMax-Avail-', storage: ['128GB','256GB','512GB'], price: [1110,1210,1410], dpp30: true, vaps: 2.8, upgradepromos: [], newpromos: []}
+Iphone12Pro = { name: 'Iphone 12 Pro', familyname: 'iphone12', aboutwebsite: 'https://www.apple.com/iphone-12-pro/?afid=p238%7Cs3wadrFwt-dc_mtid_20925d2q39172_pcrid_504909152055_pgrid_114812094426_&cid=wwa-us-kwgo-iphone--slid---Brand-iPhone12Pro-Avail-', storage: ['128GB','256GB','512GB'], price: [1010,1110,1310], dpp30: true, vaps: 2.8, upgradepromos: [], newpromos: []}
+Iphone12 = { name: 'Iphone 12', familyname: 'iphone12', aboutwebsite: 'https://www.apple.com/iphone-12/?afid=p238%7CsjVTORUmL-dc_mtid_20925d2q39172_pcrid_496800750612_pgrid_113838484506_&cid=wwa-us-kwgo-iphone--slid---Brand-iPhone12-Avail-', storage: ['64GB','128GB','256GB'], price: [810,860,960], dpp30: false, vaps: 2.8, upgradepromos: [], newpromos: []}
+Iphone12Mini = { name: 'Iphone 12 Mini', familyname: 'iphone12', aboutwebsite: 'https://www.apple.com/iphone-12/?afid=p238%7CsYF231SmE-dc_mtid_20925d2q39172_pcrid_496800750615_pgrid_114812094226_&cid=wwa-us-kwgo-iphone--slid---Brand-iPhone12mini-Avail-', storage: ['64GB','128GB','256GB'], price: [710,760,860], dpp30: false, vaps: 2.8, upgradepromos: [], newpromos: []}
+IphoneSEF64 = { name: 'Iphone SE(2020F)', familyname: 'iphoneSE', aboutwebsite: 'https://www.apple.com/iphone-se/?afid=p238%7Cso8Hx1UXw-dc_mtid_20925d2q39172_pcrid_501878487353_pgrid_117267372947_&cid=wwa-us-kwgo-iphone--slid---Brand-iPhoneSE-Avail-', storage:['64GB'], class: 'main', price: [410], dpp30: false, vaps: 2.8, upgradepromos: [], newpromos: []}
+IphoneSEF128 = { name: 'Iphone SE(2020F)', familyname: 'iphoneSE', aboutwebsite: 'https://www.apple.com/iphone-se/?afid=p238%7Cso8Hx1UXw-dc_mtid_20925d2q39172_pcrid_501878487353_pgrid_117267372947_&cid=wwa-us-kwgo-iphone--slid---Brand-iPhoneSE-Avail-', storage: ['128GB'],class: 'storage', price: [460], dpp30: false, vaps: 2.8, upgradepromos: [], newpromos: []}
+IphoneSEF256 = { name: 'Iphone SE(2020F)', familyname: 'iphoneSE', aboutwebsite: 'https://www.apple.com/iphone-se/?afid=p238%7Cso8Hx1UXw-dc_mtid_20925d2q39172_pcrid_501878487353_pgrid_117267372947_&cid=wwa-us-kwgo-iphone--slid---Brand-iPhoneSE-Avail-', storage: ['256GB'],class: 'storage', price: [560], dpp30: false, vaps: 2.8, upgradepromos: [], newpromos: []}
+IphoneSE64 = { name: 'Iphone SE(2020)', familyname: 'iphoneSE', aboutwebsite: 'https://www.apple.com/iphone-se/?afid=p238%7Cso8Hx1UXw-dc_mtid_20925d2q39172_pcrid_501878487353_pgrid_117267372947_&cid=wwa-us-kwgo-iphone--slid---Brand-iPhoneSE-Avail-', storage:['64GB'], class: 'main', price: [410], dpp30: false, vaps: 2.8, upgradepromos: [], newpromos: []}
+IphoneSE128 = { name: 'Iphone SE(2020)', familyname: 'iphoneSE', aboutwebsite: 'https://www.apple.com/iphone-se/?afid=p238%7Cso8Hx1UXw-dc_mtid_20925d2q39172_pcrid_501878487353_pgrid_117267372947_&cid=wwa-us-kwgo-iphone--slid---Brand-iPhoneSE-Avail-', storage: ['128GB'],class: 'storage', price: [460], dpp30: false, vaps: 4.3, upgradepromos: [], newpromos: []}
+IphoneSE256 = { name: 'Iphone SE(2020)', familyname: 'iphoneSE', aboutwebsite: 'https://www.apple.com/iphone-se/?afid=p238%7Cso8Hx1UXw-dc_mtid_20925d2q39172_pcrid_501878487353_pgrid_117267372947_&cid=wwa-us-kwgo-iphone--slid---Brand-iPhoneSE-Avail-', storage: ['256GB'],class: 'storage', price: [560], dpp30: false, vaps: 5.2, upgradepromos: [], newpromos: []}
+Iphone11 = { name: 'Iphone 11', familyname: 'iphone11', aboutwebsite: 'https://www.apple.com/shop/buy-iphone/iphone-11?afid=p238%7CsZkSXAVrm-dc_mtid_1870765e38482_pcrid_496931695565_pgrid_116680348492_&cid=aos-us-kwgo-iphone--slid---product-', storage: ['64GB'],class: 'main', price: [610], dpp30: false, vaps: 2.8, upgradepromos: [], newpromos: []}
+IphoneXR = { name: 'Iphone XR', familyname: 'iphoneXR', aboutwebsite: 'https://www.apple.com/shop/buy-iphone/iphone-xr?afid=p238%7CspPXPAPvQ-dc_mtid_1870765e38482_pcrid_496931695400_pgrid_77583466945_&cid=aos-us-kwgo-iphone--slid---product-', storage: ['64GB'],class: 'main', price: [510], dpp30: false, vaps: 4.3, upgradepromos: [], newpromos: []}
+
+SamsungS21 = { name: 'Galaxy S21 5G', familyname: 's21', aboutwebsite: 'https://www.phonescoop.com/phones/phone.php?p=6392', storage: ['128GB','256GB'],class: 'main', price: [800, 850], dpp30: false, vaps: 3.9, upgradepromos: [], newpromos: []}
+SamsungS21Plus = { name: 'Galaxy S21+ 5G', familyname: 's21', aboutwebsite: 'https://www.phonescoop.com/phones/phone.php?p=6393', storage: ['128GB','256GB'],class: 'main', price: [1000, 1050], dpp30: true, vaps: 3.9, upgradepromos: [], newpromos: []}
+SamsungS21Ultra = { name: 'Galaxy S21 Ultra 5G', familyname: 's21', aboutwebsite: 'https://www.phonescoop.com/phones/phone.php?p=6394', storage: ['128GB','256GB'],class: 'main', price: [1200, 1250], dpp30: true, vaps: 3.9, upgradepromos: [], newpromos: []}
+Note20 = { name: 'Note 20 5G', familyname: 'note20', aboutwebsite: 'https://www.phonescoop.com/phones/phone.php?p=6291', storage: ['128GB'],class: 'main', price: [1000], dpp30: true, vaps: 5.7, upgradepromos: [], newpromos: []}
+Note20Ultra = { name: 'Note 20 Ultra 5G', familyname: 'note20', aboutwebsite: 'https://www.phonescoop.com/phones/phone.php?p=6280', storage: ['128GB','512GB'],class: 'main', price: [1300, 1450], dpp30: true, vaps: 5.7, upgradepromos: [], newpromos: []}
+ZFold2 = { name: 'Galaxy Z Fold2 5G', familyname: 'zFold', aboutwebsite: 'https://www.phonescoop.com/articles/article.php?a=22302', storage: ['256GB'],class: 'main', price: [2000], dpp30: true, vaps: 2.8, upgradepromos: [], newpromos: []}
+SamsungS20FE = { name: 'Galaxy S20 FE 5G', familyname: 's20', aboutwebsite: 'https://www.phonescoop.com/phones/phone.php?p=6326', storage: ['128GB'],class: 'main', price: [749.99], dpp30: false, vaps: 5.0, upgradepromos: [], newpromos: []}
+SamsungA71 = { name: 'Galaxy A71 5G', familyname: 'a71', aboutwebsite: 'https://www.phonescoop.com/phones/phone.php?p=6254', storage: ['128GB'],class: 'main', price: [665], dpp30: false, vaps: 5.6, upgradepromos: [], newpromos: []}
+SamsungA515G = { name: 'Galaxy A51 5G', familyname: 'a515G', aboutwebsite: 'https://www.phonescoop.com/phones/phone.php?p=6245', storage: ['128GB'],class: 'main', price: [570], dpp30: false, vaps: 3.7, upgradepromos: [], newpromos: []}
+SamsungA51 = { name: 'Galaxy A51', familyname: 'a51', aboutwebsite: 'https://www.phonescoop.com/phones/phone.php?p=6163', storage: ['128GB'],class: 'main', price: [420], dpp30: false, vaps: 3.7, upgradepromos: [], newpromos: []}
+SamsungA21 = { name: 'Galaxy A21', familyname: 'a21', aboutwebsite: 'https://www.phonescoop.com/phones/phone.php?p=6239#:~:text=This%20affordable%20phone%20is%20a,a%203.5mm%20headphone%20jack.', storage: ['32GB'],class: 'main', price: [270], dpp30: false, vaps: 3.7, upgradepromos: [], newpromos: []}
+SamsungA11 = { name: 'Galaxy A11', familyname: 'a11', aboutwebsite: 'https://www.phonescoop.com/phones/phone.php?p=6201', storage: ['32GB'],class: 'main', price: [210], dpp30: false, vaps: 4.1, upgradepromos: [], newpromos: []}
+SamsungA01 = { name: 'Galaxy A01', familyname: 'a11', aboutwebsite: 'https://www.phonescoop.com/phones/phone.php?p=6161', storage: ['32GB'],class: 'main', price: [185], dpp30: false, vaps: 4.3, upgradepromos: [], newpromos: []}
+
+lgV60 = { name: 'V60 ThinQ', familyname: 'v60', aboutwebsite: 'https://www.phonescoop.com/phones/phone.php?p=6216', storage: ['128GB'], class: 'main', price: [950], dpp30: false, vaps: 11.3, upgradepromos: [], newpromos: []}
+lgWing = { name: 'Wing 5G', familyname: 'wing', aboutwebsite: 'https://www.phonescoop.com/phones/phone.php?p=6331', storage: ['256GB'], class: 'main', price: [1020], dpp30: true, vaps: 7.8, upgradepromos: [], newpromos: []}
+lgVelvet = { name: 'Velvet 5G', familyname: 'velvet', aboutwebsite: 'https://www.phonescoop.com/phones/phone.php?p=6253', storage: ['128GB'], class: 'main', price: [720], dpp30: false, vaps: 6.0, upgradepromos: [], newpromos: []}
+lgQ70 = { name: 'Q70', familyname: 'q70', aboutwebsite: 'https://www.phonescoop.com/phones/phone.php?p=6087', storage: ['64GB'], class: 'main', price: [370], dpp30: false, vaps: 3.7, upgradepromos: [], newpromos: []}
+lgStylo6 = { name: 'Stylo 6', familyname: 'stylo6', aboutwebsite: 'https://www.phonescoop.com/phones/phone.php?p=6225', storage: ['64GB'], class: 'main', price: [260], dpp30: false, vaps: 3.7, upgradepromos: [], newpromos: []}
+lgK51 = { name: 'K51', familyname: 'k51', aboutwebsite: 'https://www.phonescoop.com/phones/phone.php?p=6174', storage: ['32GB'], class: 'main', price: [200], dpp30: false, vaps: 4.2, upgradepromos: [], newpromos: []}
+
+motoOne = { name: 'Moto One 5G', familyname: 'motoOne', aboutwebsite: 'https://www.phonescoop.com/phones/phone.php?p=6314', storage: ['128GB'], class: 'main', price: [565], dpp30: false, vaps: 6.1, upgradepromos: [], newpromos: []}
+motoEdge = { name: 'Moto edge+', familyname: 'motoEdge', aboutwebsite: 'https://www.phonescoop.com/phones/phone.php?p=6243', storage: ['256GB'], class: 'main', price: [1035], dpp30: true, vaps: 8.6, upgradepromos: [], newpromos: []}
+motoRazr = { name: 'Motorola razr', familyname: 'motoRazr', aboutwebsite: 'https://www.phonescoop.com/phones/phone.php?p=6064', storage: ['128GB'], class: 'main', price: [1050], dpp30: true, vaps: 8.7, upgradepromos: [], newpromos: []}
+motoGPower = { name: 'Motorola G Power', familyname: 'motoGPower', aboutwebsite: 'https://www.phonescoop.com/phones/phone.php?p=6170', storage: ['64GB'], class: 'main', price: [270], dpp30: false, vaps: 3.7, upgradepromos: [], newpromos: []}
+motoGStylus = { name: 'Motorola G Stylus', familyname: 'motoGStylus', aboutwebsite: 'https://www.phonescoop.com/phones/phone.php?p=6187', storage: ['64GB'], class: 'main', price: [315], dpp30: false, vaps: 3.5, upgradepromos: [], newpromos: []}
+
+pixel5 = { name: 'Pixel 5', familyname: 'pixel5', aboutwebsite: 'https://www.phonescoop.com/phones/phone.php?p=6319', storage: ['128GB'], class: 'main', price: [730], dpp30: false, vaps: 4.1, upgradepromos: [], newpromos: []} 
+pixel4a5G = { name: 'Pixel 4a 5G', familyname: 'pixel4a5G', aboutwebsite: 'https://www.phonescoop.com/phones/phone.php?p=6317', storage: ['128GB'], class: 'main', price: [630], dpp30: false, vaps: 4.6, upgradepromos: [], newpromos: []} 
+pixel4a = { name: 'Pixel 4a', familyname: 'pixel4a', aboutwebsite: 'https://www.phonescoop.com/phones/phone.php?p=6276', storage: ['128GB'], class: 'main', price: [405], dpp30: false, vaps: 3.9, upgradepromos: [], newpromos: []} 
+
+nokia8V = { name: 'Nokia 8V 5G', familyname: 'nokia8V', aboutwebsite: 'https://www.phonescoop.com/phones/news.php?p=6358', storage: ['64GB'], class: 'main', price: [725], dpp30: false, vaps: 6.9, upgradepromos: [], newpromos: []} 
+nokia2V = { name: 'Nokia 2V Tella', familyname: 'nokia2V', aboutwebsite: 'https://www.phonescoop.com/phones/phone.php?p=5897', storage: ['8GB'], class: 'main', price: [185], dpp30: false, vaps: 3.5, upgradepromos: [], newpromos: []} 
+KyocerDuraForce2 = { name: 'Kyocer DuraForce Pro2', familyname: 'duraforce2', aboutwebsite: 'https://www.phonescoop.com/phones/phone.php?p=5895', storage: ['64GB'], class: 'main', price: [480], dpp30: false, vaps: 5.2, upgradepromos: [], newpromos: []} 
+tcl105G = { name: 'TCL 10 5G', familyname: 'tcl10', aboutwebsite: 'https://www.phonescoop.com/phones/phone.php?p=6350', storage: ['64GB'], class: 'main', price: [440], dpp30: false, vaps: 4.5, upgradepromos: [], newpromos: []} 
+samsungS20 = { name: 'Galaxy S20 5G', familyname: 's20', aboutwebsite: 'https://www.phonescoop.com/phones/phone.php?p=6212', storage: ['128GB'], class: 'main', price: [1000], dpp30: true, vaps: 7.2, upgradepromos: [], newpromos: []} 
+samsungS20White = { name: 'Galaxy S20 5G (Cloud White)', familyname: 's20White', aboutwebsite: 'https://www.phonescoop.com/phones/phone.php?p=6212', storage: ['128GB'], class: 'main', price: [1000], dpp30: true, vaps: 8.7, upgradepromos: [], newpromos: []} 
+samsungS20Plus = { name: 'Galaxy S20+ 5G', familyname: 's20', aboutwebsite: 'https://www.phonescoop.com/phones/phone.php?p=6211', storage: ['128GB', '512GB'], class: 'main', price: [1200, 1350], dpp30: true, vaps: 7.2, upgradepromos: [], newpromos: []} 
+samsungS20Ultra = { name: 'Galaxy S20 Ultra 5G', familyname: 's20', aboutwebsite: 'https://www.phonescoop.com/phones/phone.php?p=6210', storage: ['128GB', '512GB'], class: 'main', price: [1400, 1550], dpp30: true, vaps: 7.2, upgradepromos: [], newpromos: []} 
+
+ipad8Gen = { name: 'Apple Ipad 10.2 8th Gen', familyname: 'ipad', aboutwebsite: 'https://support.apple.com/kb/SP822?locale=en_US', storage: ['32GB', '128GB'], class: 'main', price: [470, 570], dpp30: false, vaps: 2.6, upgradepromos: [], newpromos: []} 
+ipadAir4Gen = { name: 'Apple Ipad Air 4th Gen', familyname: 'ipad', aboutwebsite: 'https://support.apple.com/kb/SP828?locale=en_US', storage: ['64GB', '256GB'], class: 'main', price: [740, 890], dpp30: false, vaps: 2.6, upgradepromos: [], newpromos: []} 
+ipadPro11 = { name: 'Apple Ipad Pro 11"', familyname: 'ipad', aboutwebsite: 'https://www.apple.com/ipad-pro/specs/', storage: ['128GB', '256GB', '512GB', '1TB'], class: 'main', price: [960, 1060, 1260, 1460], dpp30: false, vaps: 2.6, upgradepromos: [], newpromos: []} 
+ipadPro129 = { name: 'Apple Ipad Pro 12.9"', familyname: 'ipad', aboutwebsite: 'https://www.apple.com/ipad-pro/specs/', storage: ['128GB', '256GB', '512GB', '1TB'], class: 'main', price: [1160, 1260, 1460, 1660], dpp30: false, vaps: 2.6, upgradepromos: [], newpromos: []} 
+ipadMini5 = { name: 'Apple Ipad Mini', familyname: 'ipadMini', aboutwebsite: 'https://support.apple.com/kb/SP788?locale=en_US', storage: ['64GB', '256GB'], class: 'main', price: [540, 690], dpp30: false, vaps: 2.6, upgradepromos: [], newpromos: []} 
+samsungTab84 = { name: 'Samsung Tab A 8.4"', familyname: 'samsungTab', aboutwebsite: 'https://www.gsmarena.com/samsung_galaxy_tab_a_8_4_(2020)-10483.php', storage: ['32GB'], class: 'main', price: [330], dpp30: false, vaps: 5.6, upgradepromos: [], newpromos: []} 
+samsungTabS7 = { name: 'Samsung Tab S7 5G', familyname: 'samsung', aboutwebsite: 'https://www.phonearena.com/phones/Samsung-Galaxy-Tab-S7_id11445', storage: ['128GB'], class: 'main', price: [900], dpp30: false, vaps: 4.3, upgradepromos: [], newpromos: []} 
+samsungTabS7Plus = { name: 'Samsung Tab S7+ 5G', familyname: 'samsung', aboutwebsite: 'https://www.gsmarena.com/samsung_galaxy_tab_s7+-10336.php', storage: ['128GB'], class: 'main', price: [1100], dpp30: false, vaps: 4.3, upgradepromos: [], newpromos: []} 
+samsungTabS5E = { name: 'Samsung Tab S5e', familyname: 'samsung', aboutwebsite: 'https://www.gsmarena.com/samsung_galaxy_tab_s5e-9581.php', storage: ['64GB'], class: 'main', price: [530], dpp30: false, vaps: 4.3, upgradepromos: [], newpromos: []} 
+tclTab8 = { name: 'TCL Tab 8"', familyname: 'tclTab', aboutwebsite: 'https://techaeris.com/2020/11/13/tcl-tab-review-an-excellent-8-android-tablet-for-media-consumption/', storage: ['16GB'], class: 'main', price: [250], dpp30: false, vaps: 8.7, upgradepromos: [], newpromos: []}
+lgGpad5 = { name: 'name', familyname: 'lgTab', aboutwebsite: 'https://www.gsmarena.com/lg_g_pad_5_10_1-9952.php', storage: ['32GB'], class: 'main', price: [350], dpp30: false, vaps: 5.6, upgradepromos: [], newpromos: []}
+
+mifi6620 = { name: 'MIFI 6620 4G LTE', familyname: 'mifi', aboutwebsite: 'https://www.cnet.com/products/verizon-jetpack-mifi-6620l/specs/', storage: [''], class: 'main', price: [169.99], dpp30: false, vaps: 4.8, upgradepromos: [], newpromos: []} 
+mifi8800 = { name: 'JetPack MiFi 8800L', familyname: 'mifi', aboutwebsite: 'https://www.cellularsales.com/product/verizon-jetpack-mifi-8800l/', storage: [''], class: 'main', price: [209], dpp30: false, vaps: 5.1, upgradepromos: [], newpromos: []} 
+orbicSpeed = { name: 'Orbic Speed', familyname: 'mifi', aboutwebsite: 'https://www.rvmobileinternet.com/gear/verizon-orbic-mobile-hotspot/', storage: [''], class: 'main', price: [130], dpp30: false, vaps: 5.7, upgradepromos: [], newpromos: []} 
+gizmoWatch2 = { name: 'GizmoWatch 2', familyname: 'watchKids', aboutwebsite: 'https://www.androidcentral.com/gizmowatch-2-review', storage: [''], class: 'main', price: [99.99], dpp30: false, vaps: 0.9, upgradepromos: [], newpromos: []} 
+watchSeries6 = { name: 'Apple Watch Series 6 Aluminum', familyname: 'watch', aboutwebsite: 'https://www.androidcentral.com/gizmowatch-2-review', storage: ['40mm', '44mm'], class: 'main', price: [499.99, 529.99], dpp30: false, vaps: 0.9, upgradepromos: [], newpromos: []} 
+watchSeries6Steel = { name: 'Apple Watch Series 6 Stainless Steel', familyname: 'watch', aboutwebsite: 'https://www.androidcentral.com/gizmowatch-2-review', storage: ['40mm', '44mm'], class: 'main', price: [699.99, 749.99], dpp30: false, vaps: 0.9, upgradepromos: [], newpromos: []} 
+watchSeriesSE = { name: 'Apple Watch Series SE', familyname: 'watch', aboutwebsite: 'https://www.androidcentral.com/gizmowatch-2-review', storage: ['40mm', '44mm'], class: 'main', price: [329.99, 359.99], dpp30: false, vaps: 0.9, upgradepromos: [], newpromos: []} 
+galaxyWatch42 = { name: 'Samsung Galaxy Watch 42mm', familyname: 'watch', aboutwebsite: 'https://www.gsmarena.com/samsung_galaxy_watch-9289.php', storage: [''], class: 'main', price: [299.99], dpp30: false, vaps: 3.9, upgradepromos: [], newpromos: []} 
+galaxyWatch46 = { name: 'Samsung Galaxy Watch 46mm', familyname: 'watch', aboutwebsite: 'https://www.gsmarena.com/samsung_galaxy_watch-9289.php', storage: [''], class: 'main', price: [319.99], dpp30: false, vaps: 6.1, upgradepromos: [], newpromos: []} 
+galaxyWatchActive2 = { name: 'Samsung Galaxy Watch Active2', familyname: 'watch', aboutwebsite: 'https://www.gsmarena.com/samsung_galaxy_watch_active2-9784.php', storage: ['40mm', '44mm(Silver or Gold)'], class: 'main', price: [319.99, 339.99], dpp30: false, vaps: 2.6, upgradepromos: [], newpromos: []} 
+galaxyWatchActive2Black = { name: 'Samsung Galaxy Watch Active2 44mm(Black)', familyname: 'watch', aboutwebsite: 'https://www.gsmarena.com/samsung_galaxy_watch_active2-9784.php', storage: [''], class: 'main', price: [339.99], dpp30: false, vaps: 4.3, upgradepromos: [], newpromos: []} 
+galaxyWatch3 = { name: 'Samsung Galaxy Watch3', familyname: 'watch', aboutwebsite: 'https://www.gsmarena.com/samsung_galaxy_watch3-10315.php', storage: ['41mm', '45mm'], class: 'main', price: [449.99, 479.99], dpp30: false, vaps: 4.3, upgradepromos: [], newpromos: []} 
+
+alcatelGo = { name: 'Alcatel Go Flip', familyname: 'basic', aboutwebsite: 'https://www.phonescoop.com/phones/phone.php?p=5357', storage: [''], class: 'main', price: [130], dpp30: false, vaps: 2.4, upgradepromos: [], newpromos: []} 
+kyocerDuraVX = { name: 'Kyocer DuraVX Extreme LTE', familyname: 'basic', aboutwebsite: 'https://www.phonescoop.com/phones/phone.php?p=6228', storage: [''], class: 'main', price: [270], dpp30: false, vaps: 2.4, upgradepromos: [], newpromos: []} 
+orbicJourney = { name: 'Orbic Journey V', familyname: 'basic', aboutwebsite: 'https://phonecurious.com/orbic-journey-v-review/', storage: [''], class: 'main', price: [130], vaps: 2.4, dpp30: false, upgradepromos: [], newpromos: []} 
+
+bladeAdvantage = { name: 'Blade Advantage 2 PPD', familyname: 'prepaid', aboutwebsite: '', storage: [''], class: 'main', price: [59.99], dpp30: false, vaps: 5.8, upgradepromos: [], newpromos: []} 
+alcatelAvalon = { name: 'Alcatel Avalon V PPD', familyname: 'prepaid', aboutwebsite: '', storage: [''], class: 'main', price: [79.99], dpp30: false, vaps: 5.8, upgradepromos: [], newpromos: []} 
+orbicWonder = { name: 'Orbic Wonder PPD', familyname: 'prepaid', aboutwebsite: '', storage: [''], class: 'main', price: [99.99], dpp30: false, vaps: 5.8, upgradepromos: [], newpromos: []} 
+nokia3V = { name: 'Nokia 3V PPD', familyname: 'prepaid', aboutwebsite: '', storage: [''], class: 'main', price: [109.99], dpp30: false, vaps: 5.8, upgradepromos: [], newpromos: []} 
+
+//end 
+//promotions
+// template:
+// const promoName = [discountHighTier, discountLowTier, <a target = 'blank' class = 'premium anyUnl anyPlan' href = 'insert promo website here'> Promo </a>]
+
+//new and upgrade promos
+//class = 'premium'  class = 'anyUnl'   class = 'anyPlan
+
+const samVzVisa100 = [0, `<a target = 'blank' class = 'premium' href = 'http://cspromoguide.com/2021/01/14/active-1-14-100-verizon-dollars-w-samsung-galaxy-s21-series-purchase/'>$100 VZ Dollars with VZ Visa Approval</a>`]
+const midTier240 = [240, `<a target = 'blank' class = 'anyUnl' href = 'http://cspromoguide.com/2021/01/15/active-1-14-240-off-mid-tier-5g-smartphone-upgrades-new-acts-with-trade-in-on-premium-unlimited/'>$240 off with Trade</a>`];
+const newUpgWing300 = [300, `<a target = 'blank' class = 'anyUnl' href = 'http://cspromoguide.com/2021/02/11/active-2-11-300-off-lg-wing-news-upgs-on-premium-unlimited/'>$300 off</a>`];
+const newUpgNokia400 = [400, `<a target = 'blank' class = 'anyUnl' href = 'http://cspromoguide.com/2021/02/09/active-2-8-400-off-nokia-8v-5g-news-upgs-on-premium-unlimited/'>$400 off</a>`];
+const newUpgTablet100 = [100, `<a target = 'blank' class = 'anyPlan href = 'http://cspromoguide.com/2021/01/04/active-1-4-standalone-tablet-offers-up-to-100-off-ipads-select-samsung-tablets/'>$100 off </a>`];
+const tabBuyMoreSaveMore = [250, `<a target = 'blank' class = 'anyPlan href = 'http://cspromoguide.com/2021/01/14/active-1-14-buy-more-save-more-250-off-select-android-tablets/'>$250 Buy More Save More </a>`];
+const tabTrade100 = [100, `<a target = 'blank' class = 'anyPlan href = 'http://cspromoguide.com/2021/01/04/active-1-4-1q21-100-trade-in-for-select-tablets/'>$100 trade-in for tablets</a>`];
+const newUpgSamTabA50 = [50, `<a target = 'blank' class = 'anyPlan href = 'http://cspromoguide.com/2021/01/14/active-1-4-standalone-tablet-offer-50-off-samsung-galaxy-tab-a-8-4/'>$50 off</a>`];
+
+//upgrade Promos
+
+const buyout100 = [0, `<span class = 'buyout anyPlan'>$100 Buyout</span>`];
+const buyout125 = [0, `<span class = 'buyout anyPlan'>$125 Buyout</span>`];
+const buyout150 = [0, `<span class = 'buyout anyPlan'>$150 Buyout</span>`];
+const buyout300 = [0, `<span class = 'buyout anyPlan'>$300 Buyout</span>`];
+const upgv60Thinq300 = [300, `<a target = 'blank' class = 'anyUnl' href = 'http://cspromoguide.com/2021/02/25/active-2-25-300-off-lg-v60-upgs-on-any-unlimited/'>$300 off</a>`];
+const upgVelvet110 = [110, `<a target = 'blank' class = 'anyUnl' href = 'http://cspromoguide.com/2021/02/11/active-2-11-110-off-lg-velvet-upgs-on-premium-unlimited/'>$110 off</a>`];
+const upgQ70 = [100, `<a target = 'blank' class = 'anyUnl' href = 'http://cspromoguide.com/2021/01/04/active-1-4-100-off-lg-q70-upgrades/'>$100 off</a>`];
+const upgRazr519 = [519.99, `<a target = 'blank' class = 'anyUnl' href = 'http://cspromoguide.com/2021/01/14/active-1-14-519-99-off-motorola-razr-with-upgrade-trade-in-on-any-unlimited-promotion/'>$519.99 off with Trade</a>`];
+const upgTrade440 = [440, 100, `<a target = 'blank' class = 'anyUnl' href = 'http://cspromoguide.com/2021/01/14/active-1-14-up-to-440-off-select-smartphone-upgrades-with-trade-in-on-premium-unlimited/'>Up to $440 off with Trade</a>`];
+const upgSam600 = [600, `<a target = 'blank' class = 'anyUnl' href = 'http://cspromoguide.com/2021/01/14/active-1-14-600-off-samsung-galaxy-s21-upgrades-with-trade-in/'>$600 off with Trade</a>`];
+
+//new promos
+
+const BOGO12mini = ['BOGO', 700, `<a target = 'blank' class = 'anyUnl' href = 'http://cspromoguide.com/2021/02/04/active-2-4-android-iphone-bogo-bogoho/'>Android/Iphone BOGO</a>`];
+const BOGO12 = ['BOGO', 800, `<a target = 'blank' class = 'anyUnl' href = 'http://cspromoguide.com/2021/02/04/active-2-4-android-iphone-bogo-bogoho/'>Android/Iphone BOGO</a>`];
+const BOGO12Pro = ['BOGO',1000, `<a target = 'blank' class = 'anyUnl' href = 'http://cspromoguide.com/2021/02/04/active-2-4-android-iphone-bogo-bogoho/'>Android/Iphone BOGO</a>`];
+const BOGOSamPre = ['BOGO',1000, `<a target = 'blank' class = 'anyUnl' href = 'http://cspromoguide.com/2021/02/04/active-2-4-android-iphone-bogo-bogoho/'>Android/Iphone BOGO</a>`];
+const BOGOV60 = ['BOGO', 950, `<a target = 'blank' class = 'anyUnl' href = 'http://cspromoguide.com/2021/02/04/active-2-4-android-iphone-bogo-bogoho/'>Android/Iphone BOGO</a>`];
+const BOGOWing = ['BOGO', 1000, `<a target = 'blank' class = 'anyUnl' href = 'http://cspromoguide.com/2021/02/04/active-2-4-android-iphone-bogo-bogoho/'>Android/Iphone BOGO</a>`];
+const BOGOEdge = ['BOGO', 1000, `<a target = 'blank' class = 'anyUnl' href = 'http://cspromoguide.com/2021/02/04/active-2-4-android-iphone-bogo-bogoho/'>Android/Iphone BOGO</a>`];
+const BOGOPixel = ['BOGO', 700, `<a target = 'blank' class = 'anyUnl' href = 'http://cspromoguide.com/2021/02/04/active-2-4-android-iphone-bogo-bogoho/'>Android/Iphone BOGO</a>`];
+const BOGOS20FE = ['BOGO', 700, `<a target = 'blank' class = 'anyUnl' href = 'http://cspromoguide.com/2021/02/04/active-2-4-android-iphone-bogo-bogoho/'>Android/Iphone BOGO</a>`];
+
+
+const newTrade750 = [750, 350, `<a target = 'blank' class = 'anyUnl' href = 'http://cspromoguide.com/2021/01/14/active-1-14-up-to-750-off-select-smartphone-new-acts-with-trade-in-on-unlimited/'>Up to $750 off with Trade</a>`];
+const newSE64 = [399.99, `<a target = 'blank' class = 'anyPlan' href = 'http://cspromoguide.com/2021/02/11/active-2-11-iphone-se-new-acts-on-any-plan-promotion/'>$399.99 off</a>`];
+const newSE128 = [329.99, `<a target = 'blank' class = 'anyPlan' href = 'http://cspromoguide.com/2021/02/11/active-2-11-iphone-se-new-acts-on-any-plan-promotion/'>$329.99 off</a>`];
+const newSE256 = [309.99, `<a target = 'blank' class = 'anyPlan' href = 'http://cspromoguide.com/2021/02/11/active-2-11-iphone-se-new-acts-on-any-plan-promotion/'>$309.99 off</a>`];
+const newIphone11 = [479.99, `<a target = 'blank' class = 'anyUnl' href = 'http://cspromoguide.com/2021/03/11/active-3-11-select-smartphone-new-act-on-any-unlimited-plan-promotion/'>$479.99 off</a>`];
+const newS20FE = [579.99, `<a target = 'blank' class = 'anyUnl' href = 'http://cspromoguide.com/2021/03/11/active-3-11-select-smartphone-new-act-on-any-unlimited-plan-promotion/'>$579.99 off</a>`];
+const newVelvet579 = [579.99,`<a target = 'blank' class = 'anyUnl' href = 'http://cspromoguide.com/2021/03/11/active-3-1-up-to-579-99-off-mid-tier-5g-smartphone-new-act-on-any-unlimited/'>579.99 off</a>`];
+const newMoto429 = [429.99, `<a target = 'blank' class = 'anyUnl' href = 'http://cspromoguide.com/2021/03/11/active-3-1-up-to-579-99-off-mid-tier-5g-smartphone-new-act-on-any-unlimited/'>429.99 off</a>`];
+const newPixel479 = [479.99, `<a target = 'blank' class = 'anyUnl' href = 'http://cspromoguide.com/2021/03/11/active-3-1-up-to-579-99-off-mid-tier-5g-smartphone-new-act-on-any-unlimited/'>479.99 off</a>`];
+const newTCL279 = [279.99, `<a target = 'blank' class = 'anyUnl' href = 'http://cspromoguide.com/2021/03/11/active-3-1-up-to-579-99-off-mid-tier-5g-smartphone-new-act-on-any-unlimited/'>279.99 off</a>`];
+const newA515G549 = [549.99, `<a target = 'blank' class = 'anyUnl' href = 'http://cspromoguide.com/2021/03/04/active-3-4-samsung-a51-5g-new-act-on-unlimited-offer/'>$549.99 off</a>`];
+const entryLevelQ70 = [110, `<a target = 'blank' class = 'anyPlan' href = 'http://cspromoguide.com/2021/01/04/active-1-4-1q21-entry-level-smartphone-offer/'>Entry Level Smartphone</a>`];
+const entryLevelMotoGPower = [130, `<a target = 'blank' class = 'anyPlan' href = 'http://cspromoguide.com/2021/01/04/active-1-4-1q21-entry-level-smartphone-offer/'>Entry Level Smartphone</a>`];
+const entryLevelAvalonV = [100, `<a target = 'blank' class = 'anyPlan' href = 'http://cspromoguide.com/2021/01/04/active-1-4-1q21-entry-level-smartphone-offer/'>Entry Level Smartphone</a>`];
+const entryLevelStylo6 = [120, `<a target = 'blank' class = 'anyPlan' href = 'http://cspromoguide.com/2021/01/04/active-1-4-1q21-entry-level-smartphone-offer/'>Entry Level Smartphone</a>`];
+const entryLevelA01 = [150, `<a target = 'blank' class = 'anyPlan' href = 'http://cspromoguide.com/2021/01/04/active-1-4-1q21-entry-level-smartphone-offer/'>Entry Level Smartphone</a>`];
+const entryLevelA51 = [160, `<a target = 'blank' class = 'anyPlan' href = 'http://cspromoguide.com/2021/01/04/active-1-4-1q21-entry-level-smartphone-offer/'>Entry Level Smartphone</a>`];
+const entryLevelNokia2V = [168, `<a target = 'blank' class = 'anyPlan' href = 'http://cspromoguide.com/2021/01/04/active-1-4-1q21-entry-level-smartphone-offer/'>Entry Level Smartphone</a>`];
+const entryLevelK51 = [168, `<a target = 'blank' class = 'anyPlan' href = 'http://cspromoguide.com/2021/01/04/active-1-4-1q21-entry-level-smartphone-offer/'>Entry Level Smartphone</a>`];
+const newRazr519 = [519.99, `<a target = 'blank' class = 'anyUnl' href = 'http://cspromoguide.com/2021/01/14/active-1-14-519-99-off-motorola-razr-new-act-on-unlimited-promotion/'>$519.99 off</a>`];
+const newPixel4A379 = [379.99, `<a target = 'blank' class = 'anyUnl' href = 'http://cspromoguide.com/2021/02/04/active-2-4-select-mid-tier-4g-smartphone-new-act-offer/'>$379.99 off</a>`];
+const newA51399 = [399.99, `<a target = 'blank' class = 'anyUnl' href = 'http://cspromoguide.com/2021/02/04/active-2-4-select-mid-tier-4g-smartphone-new-act-offer/'>$399.99 off</a>`];
+const newSamTabA80 = [80, `<a target = 'blank' class = 'anyPlan' href = 'http://cspromoguide.com/2021/02/09/active-2-8-80-off-select-samsung-tablet-new-activations/'>$80 off</a>`];
+const watchTrade100 = [100, `<a target = 'blank' class = 'anyPlan' href = 'http://cspromoguide.com/2021/01/04/active-1-4-100-trade-in-for-select-watches/'>$100 trade for watches</a>`];
+const watchBOGO = [0, `<a target = 'blank' class = 'anyPlan' href = 'http://cspromoguide.com/2021/03/11/active-3-11-smartwatch-bogoho/'>Watch BOGOHO</a>`];
+const watchBOGOVar = '';
+//end
+
+//promotion targets
+//apple promos
+Iphone12.upgradepromos.push(upgTrade440);
+Iphone12Mini.upgradepromos.push(upgTrade440);
+Iphone12Pro.upgradepromos.push(upgTrade440);
+Iphone12ProMax.upgradepromos.push(upgTrade440);
+
+Iphone12.newpromos.push(BOGO12);
+Iphone12Mini.newpromos.push(BOGO12mini);
+Iphone12Pro.newpromos.push(BOGO12Pro);
+Iphone12ProMax.newpromos.push(BOGO12Pro);
+Iphone12.newpromos.push(newTrade750);
+Iphone12Mini.newpromos.push(newTrade750);
+Iphone12Pro.newpromos.push(newTrade750);
+Iphone12ProMax.newpromos.push(newTrade750);
+IphoneSE64.newpromos.push(newSE64);
+IphoneSE128.newpromos.push(newSE128);
+IphoneSE256.newpromos.push(newSE256);
+IphoneSEF64.newpromos.push(newSE64);
+IphoneSEF128.newpromos.push(newSE128);
+IphoneSEF256.newpromos.push(newSE256);
+Iphone11.newpromos.push(newIphone11);
+
+//samsung promos
+SamsungS21.upgradepromos.push(buyout125);
+SamsungS21Plus.upgradepromos.push(buyout125);
+SamsungS21Ultra.upgradepromos.push(buyout125);
+SamsungS21.upgradepromos.push(upgSam600);
+SamsungS21Plus.upgradepromos.push(upgSam600);
+SamsungS21Ultra.upgradepromos.push(upgSam600);
+SamsungS21.upgradepromos.push(samVzVisa100);
+SamsungS21Plus.upgradepromos.push(samVzVisa100);
+SamsungS21Ultra.upgradepromos.push(samVzVisa100);
+Note20.upgradepromos.push(upgTrade440);
+Note20Ultra.upgradepromos.push(upgTrade440);
+ZFold2.upgradepromos.push(upgTrade440);
+SamsungA515G.upgradepromos.push(midTier240)
+
+SamsungS21.newpromos.push(BOGOSamPre);
+SamsungS21Plus.newpromos.push(BOGOSamPre);
+SamsungS21Ultra.newpromos.push(BOGOSamPre);
+SamsungS21.newpromos.push(newTrade750);
+SamsungS21Plus.newpromos.push(newTrade750);
+SamsungS21Ultra.newpromos.push(newTrade750);
+SamsungS21.newpromos.push(samVzVisa100);
+SamsungS21Plus.newpromos.push(samVzVisa100);
+SamsungS21Ultra.newpromos.push(samVzVisa100);
+Note20.newpromos.push(BOGOSamPre);
+Note20.newpromos.push(newTrade750);
+Note20Ultra.newpromos.push(BOGOSamPre);
+Note20Ultra.newpromos.push(newTrade750);
+SamsungS20FE.newpromos.push(newS20FE);
+SamsungA515G.newpromos.push(newA515G549);
+SamsungA51.newpromos.push(newA51399);
+SamsungA51.newpromos.push(entryLevelA51);
+SamsungA01.newpromos.push(entryLevelA01);
+
+//lg promos
+lgV60.upgradepromos.push(upgv60Thinq300);
+lgV60.upgradepromos.push(upgTrade440);
+lgWing.upgradepromos.push(buyout300);
+lgWing.upgradepromos.push(newUpgWing300);
+lgWing.upgradepromos.push(upgTrade440);
+lgVelvet.upgradepromos.push(buyout150);
+lgVelvet.upgradepromos.push(upgVelvet110);
+lgVelvet.upgradepromos.push(midTier240);
+lgQ70.upgradepromos.push(upgQ70);
+
+lgV60.newpromos.push(newTrade750);
+lgWing.newpromos.push(BOGOWing);
+lgWing.newpromos.push(newUpgWing300);
+lgWing.newpromos.push(newTrade750);
+lgVelvet.newpromos.push(newVelvet579);
+lgVelvet.newpromos.push(midTier240);
+lgQ70.newpromos.push(entryLevelQ70);
+lgStylo6.newpromos.push(entryLevelStylo6);
+lgK51.newpromos.push(entryLevelK51);
+
+//moto promos
+motoOne.upgradepromos.push(buyout100);
+motoOne.upgradepromos.push(midTier240);
+motoEdge.upgradepromos.push(buyout300);
+motoEdge.upgradepromos.push(upgTrade440);
+motoRazr.upgradepromos.push(upgRazr519);
+motoGStylus.upgradepromos.push(buyout100);
+
+motoOne.newpromos.push(newMoto429);
+motoOne.newpromos.push(midTier240);
+motoEdge.newpromos.push(BOGOEdge);
+motoEdge.newpromos.push(newTrade750);
+motoRazr.newpromos.push(newRazr519);
+motoGPower.newpromos.push(entryLevelMotoGPower);
+
+//google promos
+pixel5.upgradepromos.push(upgTrade440);
+pixel4a5G.upgradepromos.push(midTier240);
+
+pixel5.newpromos.push(BOGOPixel);
+pixel5.newpromos.push(newTrade750);
+pixel4a5G.newpromos.push(newPixel479);
+pixel4a5G.newpromos.push(midTier240);
+pixel4a.newpromos.push(newPixel4A379);
+
+//other promos
+nokia8V.upgradepromos.push(newUpgNokia400);
+nokia8V.upgradepromos.push(midTier240);
+tcl105G.upgradepromos.push(midTier240);
+samsungS20White.upgradepromos.push(buyout100);
+
+nokia8V.newpromos.push(newUpgNokia400);
+nokia8V.newpromos.push(midTier240);
+nokia2V.newpromos.push(entryLevelNokia2V);
+tcl105G.newpromos.push(newTCL279);
+tcl105G.newpromos.push(midTier240);
+
+//tablet promos
+ipad8Gen.upgradepromos.push(newUpgTablet100);
+ipad8Gen.upgradepromos.push(tabBuyMoreSaveMore);
+ipad8Gen.upgradepromos.push(tabTrade100);
+ipadAir4Gen.upgradepromos.push(newUpgTablet100);
+ipadAir4Gen.upgradepromos.push(tabBuyMoreSaveMore);
+ipadAir4Gen.upgradepromos.push(tabTrade100);
+ipadPro11.upgradepromos.push(newUpgTablet100);
+ipadPro11.upgradepromos.push(tabBuyMoreSaveMore);
+ipadPro11.upgradepromos.push(tabTrade100);
+ipadPro129.upgradepromos.push(newUpgTablet100);
+ipadPro129.upgradepromos.push(tabBuyMoreSaveMore);
+ipadPro129.upgradepromos.push(tabTrade100);
+ipadMini5.upgradepromos.push(newUpgTablet100);
+samsungTab84.upgradepromos.push(newUpgSamTabA50);
+samsungTabS7.upgradepromos.push(newUpgTablet100);
+samsungTabS7.upgradepromos.push(tabBuyMoreSaveMore);
+samsungTabS7.upgradepromos.push(tabTrade100);
+samsungTabS7Plus.upgradepromos.push(newUpgTablet100);
+samsungTabS7Plus.upgradepromos.push(tabBuyMoreSaveMore);
+samsungTabS7Plus.upgradepromos.push(tabTrade100);
+samsungTabS5E.upgradepromos.push(newUpgTablet100);
+samsungTabS5E.upgradepromos.push(tabBuyMoreSaveMore);
+samsungTabS5E.upgradepromos.push(tabTrade100);
+lgGpad5.upgradepromos.push(tabBuyMoreSaveMore);
+lgGpad5.upgradepromos.push(tabTrade100);
+
+ipad8Gen.newpromos.push(newUpgTablet100);
+ipad8Gen.newpromos.push(tabBuyMoreSaveMore);
+ipad8Gen.newpromos.push(tabTrade100);
+ipadAir4Gen.newpromos.push(newUpgTablet100);
+ipadAir4Gen.newpromos.push(tabBuyMoreSaveMore);
+ipadAir4Gen.newpromos.push(tabTrade100);
+ipadPro11.newpromos.push(newUpgTablet100);
+ipadPro11.newpromos.push(tabBuyMoreSaveMore);
+ipadPro11.newpromos.push(tabTrade100);
+ipadPro129.newpromos.push(newUpgTablet100);
+ipadPro129.newpromos.push(tabBuyMoreSaveMore);
+ipadPro129.newpromos.push(tabTrade100);
+ipadMini5.newpromos.push(newUpgTablet100);
+samsungTab84.newpromos.push(newSamTabA80);
+samsungTab84.newpromos.push(newUpgSamTabA50);
+samsungTabS7.newpromos.push(newUpgTablet100);
+samsungTabS7.newpromos.push(tabBuyMoreSaveMore);
+samsungTabS7.newpromos.push(tabTrade100);
+samsungTabS7Plus.newpromos.push(newUpgTablet100);
+samsungTabS7Plus.newpromos.push(tabBuyMoreSaveMore);
+samsungTabS7Plus.newpromos.push(tabTrade100);
+samsungTabS5E.newpromos.push(newSamTabA80);
+samsungTabS5E.newpromos.push(newUpgTablet100);
+samsungTabS5E.newpromos.push(tabBuyMoreSaveMore);
+samsungTabS5E.newpromos.push(tabTrade100);
+lgGpad5.newpromos.push(tabBuyMoreSaveMore);
+lgGpad5.newpromos.push(tabTrade100);
+
+//connected promos
+gizmoWatch2.upgradepromos.push(watchBOGO);
+watchSeries6.upgradepromos.push(watchBOGO);
+watchSeries6.upgradepromos.push(watchTrade100);
+watchSeries6Steel.upgradepromos.push(watchBOGO);
+watchSeries6Steel.upgradepromos.push(watchTrade100);
+watchSeriesSE.upgradepromos.push(watchBOGO);
+watchSeriesSE.upgradepromos.push(watchTrade100);
+galaxyWatch42.upgradepromos.push(watchBOGO);
+galaxyWatch42.upgradepromos.push(watchTrade100);
+galaxyWatch46.upgradepromos.push(watchBOGO);
+galaxyWatch46.upgradepromos.push(watchTrade100);
+galaxyWatchActive2.upgradepromos.push(watchBOGO);
+galaxyWatchActive2.upgradepromos.push(watchTrade100);
+galaxyWatchActive2Black.upgradepromos.push(watchBOGO);
+galaxyWatchActive2Black.upgradepromos.push(watchTrade100);
+galaxyWatch3.upgradepromos.push(watchBOGO);
+galaxyWatch3.upgradepromos.push(watchTrade100);
+
+gizmoWatch2.newpromos.push(watchBOGO);
+watchSeries6.newpromos.push(watchBOGO);
+watchSeries6.newpromos.push(watchTrade100);
+watchSeries6Steel.newpromos.push(watchBOGO);
+watchSeries6Steel.newpromos.push(watchTrade100);
+watchSeriesSE.newpromos.push(watchBOGO);
+watchSeriesSE.newpromos.push(watchTrade100);
+galaxyWatch42.newpromos.push(watchBOGO);
+galaxyWatch42.newpromos.push(watchTrade100);
+galaxyWatch46.newpromos.push(watchBOGO);
+galaxyWatch46.newpromos.push(watchTrade100);
+galaxyWatchActive2.newpromos.push(watchBOGO);
+galaxyWatchActive2.newpromos.push(watchTrade100);
+galaxyWatchActive2Black.newpromos.push(watchBOGO);
+galaxyWatchActive2Black.newpromos.push(watchTrade100);
+galaxyWatch3.newpromos.push(watchBOGO);
+galaxyWatch3.newpromos.push(watchTrade100);
+
+
+//end
+//list of manufacturers/collapsables array of objects
+
+priority = ['priority',]
+apple = ['apple',Iphone12ProMax, Iphone12Pro, Iphone12, Iphone12Mini, IphoneSEF64, IphoneSEF128, IphoneSEF256, IphoneSE64, IphoneSEF128, IphoneSE256, Iphone11, IphoneXR];
+samsung = ['samsung',SamsungS21, SamsungS21Plus, SamsungS21Ultra, Note20, Note20Ultra, ZFold2, SamsungS20FE, SamsungA71, SamsungA515G, SamsungA51, SamsungA21, SamsungA11, SamsungA01];
+lg = ['lg',lgV60, lgWing, lgVelvet, lgQ70, lgStylo6, lgK51];
+moto = ['moto',motoOne, motoEdge, motoRazr, motoGPower, motoGStylus];
+google = ['google',pixel5, pixel4a5G, pixel4a];
+other = ['other',nokia8V, nokia2V, KyocerDuraForce2, tcl105G, samsungS20, samsungS20White, samsungS20Plus, samsungS20Ultra];
+tablet = ['tablet',ipad8Gen, ipadAir4Gen, ipadPro11, ipadPro129, ipadMini5, samsungTab84, samsungTabS7, samsungTabS7Plus, samsungTabS5E];
+connected = ['connected',mifi6620, mifi8800, orbicSpeed, gizmoWatch2, watchSeries6, watchSeries6Steel, watchSeriesSE, galaxyWatch42, galaxyWatch46, galaxyWatchActive2, galaxyWatchActive2Black, galaxyWatch3];
+basic = ['basic', alcatelGo, kyocerDuraVX, orbicJourney];
+prepaid = ['prepaid',bladeAdvantage, alcatelAvalon, orbicWonder, nokia3V];
+//end
+
+const _0x3fb7=['initial','<div\x20class\x20=\x20\x27upgpromoprice\x27><div\x20class\x20=\x20\x27tier\x27>HighTier:\x20','\x27\x20target\x20=\x20\x27blank\x27>','<div\x20class\x20=\x20\x27upgpromo\x27>','anyPlanBtn','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td><a\x20target\x20=\x20\x27blank\x27\x20href\x20=\x20\x27','1px\x201px\x20red,\x20-1px\x201px\x20red,\x201px\x20-1px\x20red,\x20-1px\x20-1px\x20red','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td\x20class\x20=\x20\x27same\x27>Same\x20as\x20base\x20storage</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>','</a></td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td><strong>$','1WOZuaQ','</strong></td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>','vaps','toFixed','17buFDun','<div\x20class\x20=\x20\x27newpromoprice\x27>','</strong></td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td><strong>','pageYOffset','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td><strong>$','235537lieEoO','from','innerHTML','</strong></td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>','legend','white','anyPlan','sticky','43FDKaJP','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>','red','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td\x20class\x20=\x20\x27same\x27>Same\x20as\x20base\x20storage</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>','dpp30','class','anyUnl','</strong></td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>','Table','aboutWebsite','<div\x20class\x20=\x20\x27upgpromoprice\x27><-More\x20Details</div>','anyBtn','length','premBtn','</strong></td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td><strong>','1484481XcNjhu','storage','55147IkZwKd','newpromos','<div\x20class\x20=\x20\x27newpromo\x27>none</div>','upgradepromos','17023JLYOtv','onscroll','BOGO','200822FJRnoa','classList','backgroundColor','forEach','textShadow','<div\x20class\x20=\x20\x27upgpromo\x27>none</div>','<td><a\x20target\x20=\x20\x27blank\x27\x20href\x20=\x20\x27','<div\x20class\x20=\x20\x27newpromoprice\x27><div\x20class\x20=\x20\x27tier\x27>HighTier:\x20','</strong></td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td><strong>','<div\x20class\x20=\x20\x27upgpromoprice\x27>','</div></div>','</div>','appendChild','</div><div\x20class\x20=\x20\x27tier\x27>LowTier:\x20','getElementById','buyout','createElement','none','remove','180355zxeilN','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>','404983tkZAiy','\x20credit\x20off\x202nd\x20phone</div>','getElementsByClassName','main','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td\x20class\x20=\x20\x27same\x27>Same\x20as\x20base</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>','style','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td\x20class\x20=\x20\x27same\x27>Same\x20as\x20base</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>','</td>','\x20|\x20','add','</a></td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td><strong>$','display','price','name','<td>'];
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--){d[e(c)]=k[c]||e(c)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('6 P=1U(1S,4o){1S=1S-2l;8 2H=2s[1S];1u 2H};6 g=P;(1U(1o,2E){6 v=P;3u(!![]){3v{6 2D=-y(v(3x))*y(v(3A))+y(v(3C))*-y(v(3B))+y(v(3m))*y(v(3j))+-y(v(3n))+-y(v(3l))+y(v(3p))+y(v(3q));13(2D===2E)3s;1c 1o[\'2p\'](1o[\'2r\']())}3t(3w){1o[\'2p\'](1o[\'2r\']())}}}(2s,3o),W=1f=>{6 M=P;8 1A=\'\';13(1f[M(22)][M(B)]===3)1A=M(3y);1c 1H(8 1p=3;1p<1f[\'2e\'][M(B)];1p++){8 2U=1f[\'2e\'][1p][\'1v\'];1A+=M(3z)+1f[M(22)][1p][2U-o]+M(1e)}1u 1A},G=1g=>{6 Z=P;8 R=\'\',n=1g[\'18\'][17],1k=3,24=3;1u 1g[Z(25)]===!![]?1g[Z(22)][Z(T)](1b=>{6 s=Z;1b[s(B)]>4?(l=n-1b[3],j=n-1b[o],N=(l/d)[\'w\'](4),O=(j/d)[\'w\'](4),1N=(l/E)[s(9)](4),1O=(j/E)[s(9)](4),R+=s(2K)+l+\'\\0|\\0\'+N+\'/\'+1N+s(23)+j+s(D)+O+\'/\'+1O+s(21)):1b[3]===3?R+=\'<e\\I\\0=\\0\\37\\x><-2d\\28</e>\':(n=(n-1b[3])[s(9)](4),1k=(n/d)[s(9)](4),24=(n/E)[s(9)](4),R+=\'<e\\I\\0=\\0\\37\\x>\'+n+s(D)+1k+\'/\'+24+\'</e>\')}):1g[\'2e\'][Z(T)](14=>{6 z=Z;14[z(B)]>4?(l=n-14[3],j=n-14[o],N=(l/d)[\'w\'](4),O=(j/d)[\'w\'](4),R+=z(2K)+l+z(D)+N+z(23)+j+\'\\0|\\0\'+O+z(21)):14[3]===3?R+=z(3r):(n=(n-14[3])[z(9)](4),1k=(n/d)[\'w\'](4),R+=z(3k)+n+\'\\0|\\0\'+1k+z(1e))}),R},X=1d=>{6 K=P;8 1L=\'\';13(1d[K(1s)][K(B)]===3)1L=K(3E);1c 1H(8 1h=3;1h<1d[K(1s)][\'1v\'];1h++){8 2u=1d[K(1s)][1h][K(B)];1L+=\'<e\\I\\0=\\0\\42\\x>\'+1d[\'44\'][1h][2u-o]+K(1e)}1u 1L},H=1r=>{6 11=P;8 A=\'\',i=1r[11(p)][17],1n=3,29=3;1u 1r[11(25)]===!![]?1r[11(1s)][\'V\'](L=>{6 m=11;L[m(B)]>4?L[3]===m(2F)?A+=m(26)+L[o]+m(2G):(l=i-L[3],j=i-L[o],N=(l/d)[\'w\'](4),O=(j/d)[m(9)](4),1N=(l/E)[m(9)](4),1O=(j/E)[\'w\'](4),A+=\'<e\\I\\0=\\0\\1V\\x><e\\I\\0=\\0\\2J\\x>45:\\0\'+l+\'\\0|\\0\'+N+\'/\'+1N+m(23)+j+m(D)+O+\'/\'+1O+m(21)):L[3]===3?A+=\'<e\\I\\0=\\0\\1V\\x><-2d\\28</e>\':(i=(i-L[3])[\'w\'](4),1n=(i/d)[m(9)](4),29=(i/E)[m(9)](4),A+=\'<e\\I\\0=\\0\\1V\\x>\'+i+m(D)+1n+\'/\'+29+m(1e))}):1r[11(1s)][\'V\'](Q=>{6 t=11;Q[t(B)]>4?Q[3]===t(2F)?A+=t(26)+Q[o]+t(2G):(l=i-Q[3],j=i-Q[o],N=(l/d)[t(9)](4),O=(j/d)[t(9)](4),A+=t(46)+l+\'\\0|\\0\'+N+\'</e><e\\I\\0=\\0\\2J\\x>47:\\0\'+j+\'\\0|\\0\'+O+\'</e></e>\'):Q[3]===3?A+=\'<e\\I\\0=\\0\\1V\\x><-2d\\28</e>\':(i=(i-Q[3])[t(9)](4),1n=(i/d)[t(9)](4),A+=t(26)+i+\'\\0|\\0\'+1n+t(1e))}),A});8 17=3;J=C=>{C[\'48\'](o,C[\'1v\'])[\'V\'](2=>{6 1=P;8 10=7[\'49\'](\'1q\');17=3;13(2[1(25)]===!![]){13(2[\'3c\'][1(B)]>o){8 2R=(2[1(p)][3]/d)[\'w\'](4),2Q=(2[\'18\'][3]/E)[1(9)](4);10[1(S)][1(1y)](\'4a\'),10[\'4b\']=1(35)+2[1(3f)]+1(2h)+2[\'2j\']+\'\\0\'+2[1(r)][3]+1(34)+2[\'18\'][3]+1(33)+2R+1(D)+2Q+1(31)+2[\'1J\']+1(15)+W(2)+1(15)+G(2)+\'</5>\\q\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0<5>\'+X(2)+1(15)+H(2)+1(19),7[1(k)](C[3]+1(1m))[1(1z)](10);1H(8 U=o;U<2[1(r)][\'1v\'];U++){17++;8 1Z=7[1(1E)](\'1q\');1Z[1(S)][\'2c\'](1(r));8 39=(2[1(p)][U]/d)[1(9)](4),3a=(2[1(p)][U]/E)[1(9)](4);1Z[1(Y)]=\'<5>\'+2[1(1l)]+\'\\0\'+2[1(r)][U]+1(2T)+2[1(p)][U]+1(2t)+39+1(D)+3a+\'</1G></5>\\q\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0<5>\'+2[1(1W)]+1(4c)+G(2)+1(43)+H(2)+\'</5>\',7[1(k)](C[3]+1(1m))[1(1z)](1Z)}}1c{8 1j=7[1(1E)](\'1q\'),27=(2[1(p)]/d)[1(9)](4),2b=(2[1(p)]/E)[1(9)](4);1j[1(S)][1(1y)](\'\'+2[\'2Z\']),2[1(2Y)]===1(2m)?1j[1(Y)]=1(30)+2[1(3f)]+\'\\x\\4d\\0=\\0\\4f\\x>\'+2[\'2j\']+\'\\0\'+2[1(r)][3]+1(3i)+2[1(p)]+1(1C)+27+1(D)+2b+1(2i)+2[1(1W)]+\'</5>\\q\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0<5>\'+W(2)+1(u)+G(2)+1(u)+X(2)+\'</5>\\q\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0<5>\'+H(2)+1(19):1j[1(Y)]=\'\\q\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0<5>\'+2[1(1l)]+\'\\0\'+2[1(r)][3]+\'</a></5>\\q\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0<5><1G>$\'+2[1(p)]+1(1C)+27+1(D)+2b+1(2i)+2[\'1J\']+1(u)+W(2)+1(u)+G(2)+1(u)+X(2)+\'</5>\\q\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0<5>\'+H(2)+1(19),7[1(k)](C[3]+1(1m))[1(1z)](1j)}}1c{13(2[\'3c\'][\'1v\']>o){8 32=(2[1(p)][3]/d)[\'w\'](4);10[1(S)][1(1y)](1(2m)),10[1(Y)]=1(35)+2[\'36\']+1(2h)+2[1(1l)]+\'\\0\'+2[1(r)][3]+1(34)+2[1(p)][3]+1(33)+32+1(31)+2[1(1W)]+1(15)+W(2)+\'</5>\\q\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0<5>\'+G(2)+1(15)+X(2)+1(15)+H(2)+\'</5>\',7[1(k)](C[3]+1(1m))[\'2v\'](10);1H(8 16=o;16<2[1(r)][1(B)];16++){17++;8 1F=7[1(1E)](\'1q\');1F[1(S)][\'2c\'](1(r));8 2y=(2[\'18\'][16]/d)[1(9)](4);1F[1(Y)]=1(4g)+2[1(1l)]+\'\\0\'+2[1(r)][16]+1(2T)+2[1(p)][16]+1(2t)+2y+1(4h)+2[1(1W)]+1(3D)+G(2)+1(4j)+H(2)+1(19),7[1(k)](C[3]+1(1m))[1(1z)](1F)}}1c{8 1i=7[1(1E)](\'1q\'),2k=(2[\'18\']/d)[\'w\'](4);1i[1(S)][1(1y)](\'\'+2[1(2Y)]),2[\'2Z\']===1(2m)?1i[1(Y)]=1(30)+2[\'36\']+1(2h)+2[1(1l)]+\'\\0\'+2[1(r)][3]+1(3i)+2[1(p)]+1(1C)+2k+1(2i)+2[\'1J\']+1(u)+W(2)+1(u)+G(2)+\'</5>\\q\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0<5>\'+X(2)+1(u)+H(2)+1(19):1i[1(Y)]=\'\\q\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0<5>\'+2[\'2j\']+\'\\0\'+2[1(r)][3]+\'</a></5>\\q\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0<5><1G>$\'+2[\'18\']+1(1C)+2k+\'</1G></5>\\q\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0<5>\'+2[\'1J\']+\'</5>\\q\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0<5>\'+W(2)+1(u)+G(2)+1(u)+X(2)+1(u)+H(2)+1(19),7[1(k)](C[3]+\'4k\')[\'2v\'](1i);}}});},J(4l),J(4m),J(4n),J(4e),J(41),J(3Q),J(40),J(3G);8 2N=1R[g(2C)](7[g(2S)](g(3H)));2N[\'V\'](2A=>{6 1T=g;2A[1T(h)][1T(3I)]=1T(3J);}),1B=1R[\'3d\'](7[\'2B\'](\'3K\')),1D=1R[g(2C)](7[\'2B\'](g(3L))),1x=1R[\'3d\'](7[g(2S)](g(3M))),3N=()=>{6 b=g;7[b(k)](b(3e))[b(h)][b(12)]=b(1t),7[b(k)](b(3g))[b(h)][b(12)]=\'3O\',7[b(k)](\'3F\')[b(h)][b(12)]=b(2W),1B[b(T)](2O=>{6 1M=b;2O[1M(h)][1M(F)]=1M(1X);}),1D[\'V\'](2I=>{6 2n=b;2I[2n(h)][2n(F)]=\'2z\';}),1x[\'V\'](2q=>{6 2o=b;2q[\'1K\'][2o(F)]=2o(1X);});},3P=()=>{6 f=g;7[f(k)](\'3R\')[\'1K\'][\'3h\']=f(1t),7[f(k)](f(2l))[f(h)][f(12)]=f(1t),7[f(k)](\'3S\')[f(h)][f(12)]=\'3T\',1B[f(T)](2w=>{6 1P=f;2w[1P(h)][1P(F)]=1P(2a);}),1D[\'V\'](2P=>{6 2g=f;2P[2g(h)][2g(F)]=\'2z\';}),1x[f(T)](38=>{6 20=f;38[20(h)][20(F)]=20(1X);});},3U=()=>{6 c=g;7[c(k)](c(3e))[\'1K\'][c(12)]=c(1t),7[c(k)](c(2l))[\'1K\'][c(12)]=c(1t),7[\'2x\'](c(3g))[c(h)][\'3h\']=c(2W),1B[c(T)](2V=>{6 1I=c;2V[1I(h)][1I(F)]=1I(2a);}),1D[c(T)](2X=>{6 1w=c;2X[1w(h)][1w(F)]=1w(2a);}),1x[c(T)](3b=>{6 1Y=c;3b[1Y(h)][1Y(F)]=1Y(1X);});},2L[g(3V)]=1U(){2M();};8 1Q=7[\'2x\'](g(3W)),2f=1Q[\'3X\'];1U 2M(){6 1a=g;2L[1a(3Y)]>2f?1Q[1a(S)][\'2c\'](1a(3Z)):1Q[1a(S)][1a(4i)](\'2f\')}',62,273,'x20|_0x4825f9|_0x137012|0x0|0x2|td|const|document|let|0x220||_0x2fb246|_0x1f8a66|0x18|div|_0x3d4f9d|_0x217fe5|0x20a|_0x135925|priceLow|0x1fe|priceHigh|_0x1fafe6|_0x42a539|0x1|0x211|x0a|0x1e8|_0x26bda3|_0x2df41b|0x204|_0x1233d7|toFixed|x27|parseInt|_0x394d02|_0x3df268|0x23a|_0x35ff4a|0x20d|0x1e|0x210|upgPricing|newPricing|x20class|printFnctn|_0x49a59a|_0x5c9569|_0x1508b7|monthly24High|monthly24Low|_0x1adf|_0x13c5b9|_0x5cac06|0x1f1|0x1f3|_0x6690eb|forEach|upgPromo|newPromo|0x228|_0x1ba289|_0x140a04|_0x53cd58|0x1f2|if|_0x3fc9c1|0x22f|_0x28a75e|storageCounter|price|0x20c|_0x33d6b8|_0x493fe3|else|_0x4ff139|0x1fb|_0x5a8da0|_0x369dd1|_0x48ecf8|_0x378ee9|_0x51d067|_0x2ac597|0x212|0x236|_0x6e46a8|_0x1c2983|_0x5635b8|tr|_0x15cb35|0x1ea|0x22b|return|length|_0x2c3a84|anyPlanPromos|0x20e|0x1fc|_0xb031d|premiumPromos|0x1f8|anyUnlPromos|0x200|_0x443cde|strong|for|_0x3b44f3|vaps|style|_0x572827|_0x2940cb|monthly30High|monthly30Low|_0x2f473d|header|Array|_0x3e7148|_0x44e51c|function|x27newpromoprice|0x21f|0x214|_0x56a437|_0x1c2d42|_0x3a9353|0x1fa|0x1ec|0x1fd|_0x7c74f2|0x232|0x222|_0x23a5b1|x20Details|_0x4f8125|0x201|_0x214b67|add|More|upgradepromos|sticky|_0x73eea5|0x216|0x229|name|_0x268f61|0x1e5|0x208|_0x36ea02|_0x2e1395|push|_0x55e4d5|shift|_0x3fb7|0x1e6|_0x3a3727|appendChild|_0x4ea096|getElementById|_0x22c1fc|initial|_0x4e28e9|getElementsByClassName|0x227|_0x17e303|_0x3d9553|0x1ef|0x206|_0x3fb7a8|_0x32a534|x27tier|0x215|window|myFunction|buyout|_0x13d7ee|_0x5cbc82|_0x1fe84d|_0x32d921|0x207|0x225|_0x21f11a|_0x1fd07b|0x230|_0x167dce|0x233|class|0x219|0x235|_0xa5997e|0x223|0x21c|0x1f6|aboutWebsite|x27upgpromoprice|_0x5102ae|_0x24f6f8|_0x3fb2b7|_0x12d02e|storage|from|0x239|0x237|0x218|backgroundColor|0x20f|0x1ed|0x1f9|0x226|0x22e|0x1f0|0x96e00|0x203|0x1e7|0x238|break|catch|while|try|_0x10ab9b|0x205|0x1f5|0x217|0x21d|0x1e9|0x221|0x21b|0x1eb|premBtn|connected|0x1ff|0x1f4|0x21a|premium|0x234|0x22c|runPremium|white|runAny|other|anyPlanBtn|anyBtn|red|runAnyPlan|0x1ee|0x22a|offsetTop|0x224|0x22d|tablet|google|x27newpromo|0x20b|newpromos|HighTier|0x1f7|LowTier|slice|createElement|main|innerHTML|0x209|x20target|moto|x27blank|0x213|0x21e|0x202|0x231|Table|apple|samsung|lg|_0x78bd52'.split('|'),0,{}))
+  
+</script>
+</body>
+</html>
