@@ -76,6 +76,9 @@
     .hidden {
         display: none;
     }
+    #premBtn {
+        background-color: red;
+    }
 </style>
 <script>
     $(document).ready(function(){
@@ -542,9 +545,9 @@ const connectedBYOD = [0, 'anyPlan', `<a target = 'blank' class = 'anyPlan' href
 const BYOD300 = [0, 'anyUnl', `<a target = 'blank' class = 'anyUnl' href = 'https://infomanager.verizon.com/content/km/categories/promotions/349983.html'> $300 gift card for BYOD </a>`]
 const byodStreamTV = [0,'anyUnl', `<a target = 'blank' class = 'anyUnl' href = 'https://infomanager.verizon.com/content/km/categories/promotions/349990.html'>Free Stream TV with BYOD</a>`]
 const switcher300 = [0,'premium', `<a target = 'blank' class = 'premium' href = 'https://infomanager.verizon.com/content/km/categories/promotions/349871.html'>$300 Switcher giftcard </a>`];
-const switcher150 = [0,'anyUnl', `<a target = 'blank' class = 'anyUnl' href = 'https://infomanager.verizon.com/content/km/categories/promotions/349871.html'>$150 Switcher giftcard </a>`];
+const switcher150 = [0,'anyUnl hidden', `<a target = 'blank' class = 'anyUnl hidden' style = 'display:none' href = 'https://infomanager.verizon.com/content/km/categories/promotions/349871.html'>$150 Switcher giftcard </a>`];
 const switcher200 = [0,'premium', `<a target = 'blank' class = 'premium' href = 'https://infomanager.verizon.com/content/km/categories/promotions/349871.html'>$200 Switcher giftcard </a>`];
-const switcher100 = [0,'anyUnl', `<a target = 'blank' class = 'anyUnl' href = 'https://infomanager.verizon.com/content/km/categories/promotions/349871.html'>$100 Switcher giftcard </a>`];
+const switcher100 = [0,'anyUnl hidden', `<a target = 'blank' class = 'anyUnl hidden' style = 'display:none' href = 'https://infomanager.verizon.com/content/km/categories/promotions/349871.html'>$100 Switcher giftcard </a>`];
 
 //apple promos
 Iphone12.upgradepromos.push(upgTrade440);
