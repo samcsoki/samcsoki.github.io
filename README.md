@@ -11,6 +11,5 @@
 
 ## Future Updates
 
-* Fix the New and Upgrade Layout and display when toggle switches active/inactive
 * Add ability to create quote by clicking on phones and promos
 * Make prettier
