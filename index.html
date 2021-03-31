@@ -33,7 +33,7 @@
     }
     .legend {
         width:100%;
-        height:100px;
+        height:102px;
         border:2px solid black;
         text-align: center;
         line-height: 50px;
@@ -84,6 +84,11 @@
     #premBtn {
         background-color: red;
     }
+    .collapse-title {
+        font-weight: bold;
+        color: black;
+        font-size: 20px;
+    }
 </style>
 <script>
     $(document).ready(function(){
@@ -112,7 +117,7 @@
             <div class="card">
                 <div class="card-header" id="headingZero">
                     <h2 class="mb-0">
-                        <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#priority"><i class="fa fa-plus"></i>Priority Devices</button>									
+                        <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#priority"><i class="fa fa-plus"></i><span class = 'collapse-title'>Priority Devices</span></button>									
                     </h2>
                 </div>
                 <div id="priority" class="collapse" aria-labelledby="headingZero" data-parent="#accordionExample">
@@ -135,7 +140,7 @@
         <div class="card">
             <div class="card-header" id="headingOne">
                 <h2 class="mb-0">
-                    <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#apple"><i class="fa fa-plus"></i>Apple</button>									
+                    <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#apple"><i class="fa fa-plus"></i><img src = 'applelogo.png' height = 30px width = 95px></button>									
                 </h2>
             </div>
             <div id="apple" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
@@ -159,7 +164,7 @@
         <div class="card">
             <div class="card-header" id="headingTwo">
                 <h2 class="mb-0">
-                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#samsung"><i class="fa fa-plus"></i>Samsung</button>
+                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#samsung"><i class="fa fa-plus"></i><img src = 'samsunglogo.png' height = 30px width= 145px></button>
                 </h2>
             </div>
             <div id="samsung" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
@@ -182,7 +187,7 @@
         <div class="card">
             <div class="card-header" id="headingThree">
                 <h2 class="mb-0">
-                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#lg"><i class="fa fa-plus"></i>LG</button>                     
+                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#lg"><i class="fa fa-plus"></i><img src='lglogo.png' height = 40px width = 60px></button>                     
                 </h2>
             </div>
             <div id="lg" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
@@ -205,7 +210,7 @@
         <div class="card">
             <div class="card-header" id="headingFour">
                 <h2 class="mb-0">
-                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#moto"><i class="fa fa-plus"></i>Motorola</button>                     
+                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#moto"><i class="fa fa-plus"></i><img src ='motologo.png' height = 30px width = 120px></button>                     
                 </h2>
             </div>
             <div id="moto" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
@@ -228,7 +233,7 @@
         <div class="card">
             <div class="card-header" id="headingFive">
                 <h2 class="mb-0">
-                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#google"><i class="fa fa-plus"></i>Google</button>                     
+                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#google"><i class="fa fa-plus"></i><img src = 'googlelogo.png' height = 30px width = 100px></button>                     
                 </h2>
             </div>
             <div id="google" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
@@ -251,7 +256,7 @@
         <div class="card">
             <div class="card-header" id="headingSix">
                 <h2 class="mb-0">
-                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#other"><i class="fa fa-plus"></i>Others/EOL Phones</button>                     
+                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#other"><i class="fa fa-plus"></i><span class = 'collapse-title'>Others/EOL Phones</span></button>                     
                 </h2>
             </div>
             <div id="other" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
@@ -274,7 +279,7 @@
         <div class="card">
             <div class="card-header" id="headingSeven">
                 <h2 class="mb-0">
-                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#tablet"><i class="fa fa-plus"></i>Tablets</button>                     
+                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#tablet"><i class="fa fa-plus"></i><span class = 'collapse-title'>Tablets</span></button>                     
                 </h2>
             </div>
             <div id="tablet" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
@@ -298,7 +303,7 @@
         <div class="card">
             <div class="card-header" id="headingEight">
                 <h2 class="mb-0">
-                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#connected"><i class="fa fa-plus"></i>Connected Devices</button>                     
+                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#connected"><i class="fa fa-plus"></i><span class = 'collapse-title'>Connected Devices</span></button>                     
                 </h2>
             </div>
             <div id="connected" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
@@ -321,7 +326,7 @@
         <div class="card">
             <div class="card-header" id="headingNine">
                 <h2 class="mb-0">
-                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#basic"><i class="fa fa-plus"></i>Basic Phones</button>                     
+                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#basic"><i class="fa fa-plus"></i><span class = 'collapse-title'>Basic Phones</span></button>                     
                 </h2>
             </div>
             <div id="basic" class="collapse" aria-labelledby="headingNine" data-parent="#accordionExample">
@@ -358,7 +363,7 @@
         <div class="card">
             <div class="card-header" id="headingTen">
                 <h2 class="mb-0">
-                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#prepaid"><i class="fa fa-plus"></i>Prepaid</button>                     
+                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#prepaid"><i class="fa fa-plus"></i><span class = 'collapse-title'>Prepaid</span></button>                     
                 </h2>
             </div>
             <div id="prepaid" class="collapse" aria-labelledby="headingTen" data-parent="#accordionExample">
