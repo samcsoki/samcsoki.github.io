@@ -38,10 +38,13 @@
         text-align: center;
         line-height: 50px;
         font-size: 40px;
+        font-weight: bold;
         background-color: black;
-        color: white;
-        text-shadow: 1px 1px red, -1px 1px red, 1px -1px red, -1px -1px red;
-        
+        color: white;   
+    }
+    #priceguide {
+        position:relative;
+        top:5px;
     }
     .storage {
         font-size: 12px;
@@ -53,6 +56,8 @@
     .promo-button {
         font-size: 15px;
         line-height: 15px;
+        border-radius: 5px;
+        padding: 3px;
     }
     .tier {
         line-height: 10px;
@@ -97,7 +102,7 @@
 </script>
 </head>
 <body>
-    <div class = 'legend' id = 'legend'><span class = 'title'>CSOKI Price Guide</span><br>
+    <div class = 'legend' id = 'legend'><span class = 'title'><img src = 'CSOKIlogo.png' height = 40 width = 312><span id = 'priceguide'> Price Guide</span></span><br>
         <button class = 'promo-button' id = 'premBtn' onclick = 'runPremium()'>Premium Unl</button>
         <button class = 'promo-button' id = 'anyBtn' onclick = 'runAny()'>Any Unl</button>
         <button class = 'promo-button' id = 'anyPlanBtn' onclick = 'runAnyPlan()'>Any Plan</button>
@@ -113,7 +118,16 @@
                 <div id="priority" class="collapse" aria-labelledby="headingZero" data-parent="#accordionExample">
                     <div class="card-body">
                         <table id = 'priorityTable'>
-
+                            <tr>
+                                <th>Model</th>
+                                <th>DPP Max</th>
+                                <th>Max Monthly(24/30)</th>
+                                <th>Vaps</th>
+                                <th>Upgrade Promos</th>
+                                <th>Cost with Upg Promos</th>
+                                <th>New Promos</th>
+                                <th>Cost with New Promos</th>
+                            </tr> 
                         </table>
                     </div>
                 </div>
