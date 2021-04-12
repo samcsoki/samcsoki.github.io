@@ -13,6 +13,7 @@
 
 ## Future Updates
 * add more features to quote tool:
+  * add potential VAPs generator
   * add older plans
   * add ability to include existing lines and dpp in quote tool
   * create one push refresh button for all functions
