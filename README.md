@@ -14,6 +14,8 @@
 ## Future Updates
 * add more features to quote tool:
   * add potential VAPs generator
+  * make table headers sticky
+  * make popovers for promos work on consumer and business
   * add older plans
   * add ability to include existing lines and dpp in quote tool
   * create one push refresh button for all functions
