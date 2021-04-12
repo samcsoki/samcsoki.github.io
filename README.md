@@ -8,8 +8,15 @@
 * Displays more information
 * Toggle switches to show promos depending on plan
 * Links to promo guide and about phones
+* QUOTE TOOL IS LIVE
+* added business price guide
 
 ## Future Updates
+* add more features to quote tool:
+  * add older plans
+  * add ability to include existing lines and dpp in quote tool
+  * create one push refresh button for all functions
+  * add ability to print/email quote
 
-* Add ability to create quote by clicking on phones and promos
-* Make prettier
+* Once I learn Mongo.db going to move all phone/plans/accessories/promos to that
+* May change some things as I learn React
