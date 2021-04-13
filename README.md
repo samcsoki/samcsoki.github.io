@@ -14,7 +14,6 @@
 ## Future Updates
 * add more features to quote tool:
   * add potential VAPs generator
-  * add programming included/not included button on extras tab
   * make table headers sticky
   * make popovers for promos work on consumer and business
   * add older plans
