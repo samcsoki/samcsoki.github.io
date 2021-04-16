@@ -867,6 +867,7 @@ class phone {
   KyocerDuraForce2 = new phone('Kyocera DuraForce Pro2','KyocerDuraForce2', 'duraforce', 'https://www.phonescoop.com/phones/phone.php?p=5895',  ['64GB'], 'main',  [480], [216], false, 5.2, '?', [],  [], [], []) 
   KyoceraUltra5G = new phone('Kyocera DuraForce Ultra 5G','KyoceraUltra5G', 'duraforce', 'https://www.phonescoop.com/phones/phone.php?p=6378', ['128GB'], 'main', [900], [400], false, '?', '?', [],  [], [], []);
   tcl105G = new phone('TCL 10 5G','tcl105G', 'tcl10', 'https://www.phonescoop.com/phones/phone.php?p=6350',  ['64GB'], 'main',  [440], [220], false, 4.5, '?', [],  [], [], []) 
+  onePlus8 = new phone('OnePlus 8 5G', 'onePlus8', 'oneplus', 'https://www.phonescoop.com/phones/phone.php?p=6236',['128GB'], 'main', [820], [420], false, 13.0, '?', [], [], [], [])
   samsungS20 = new phone('Galaxy S20 5G','samsungS20', 's20', 'https://www.phonescoop.com/phones/phone.php?p=6212',  ['128GB'], 'main',  [1000], [500], true, 7.2, '?', [],  [], [], [])
   samsungS20White = new phone('Galaxy S20 5G (Cloud White)','samsungS20White', 's20White', 'https://www.phonescoop.com/phones/phone.php?p=6212',  ['128GB'], 'main',  [1000], [500], true, 8.7, '?', [],  [], [], [])
   samsungS20Plus = new phone('Galaxy S20+ 5G','samsungS20Plus', 's20', 'https://www.phonescoop.com/phones/phone.php?p=6211',  ['128GB', '512GB'], 'main',  [1200, 1350], [700, 850], true, 7.2, '?', [],  [], [], []) 
@@ -1244,6 +1245,8 @@ class phone {
   nokia2V.newpromos.push(entryLevelNokia2V);
   tcl105G.newpromos.push(newTCL279);
   tcl105G.newpromos.push(vzVisa120);
+  onePlus8.newpromos.push(switcher200);
+  onePlus8.newpromos.push(switcher100);
   
   //tablet promos
   ipad8Gen.upgradepromos.push(newUpgTablet100);
@@ -1600,13 +1603,13 @@ class phone {
   //end
   //list of manufacturers/collapsables array of objects
   tableArray = [ ['BYOD', bYOD, existing],
-  priority = ['priority', lgV60, motoEdge, motoRazr, nokia8V, lgWing, lgVelvet, motoOne ],
+  priority = ['priority', onePlus8, lgV60, motoEdge, motoRazr, nokia8V, lgWing, lgVelvet, motoOne ],
   apple = ['apple',Iphone12ProMax, Iphone12Pro, Iphone12, Iphone12Mini, IphoneSEF64, IphoneSEF128, IphoneSEF256, IphoneSE64, IphoneSE128, IphoneSE256, Iphone11, Iphone11Pro, Iphone11ProMax, IphoneXR, IphoneXR128],
   samsung = ['samsung',SamsungS21, SamsungS21Plus, SamsungS21Ultra, Note20, Note20Ultra, ZFold2, SamsungS20FE, SamsungA71, SamsungA515G, SamsungA51, SamsungA42, SamsungA21, , SamsungA01],
   lg = ['lg',lgV60, lgWing, lgVelvet, lgQ70, lgStylo6, lgK51],
   moto = ['moto',motoOne, motoEdge, motoRazr, motoGPower, motoGStylus],
   google = ['google',pixel5, pixel4a5G, pixel4a],
-  other = ['other',nokia8V, nokia2V, KyocerDuraForce2, KyoceraUltra5G, tcl105G, samsungS20, samsungS20White, samsungS20Plus, samsungS20Ultra],
+  other = ['other',nokia8V, nokia2V, KyocerDuraForce2, KyoceraUltra5G, tcl105G, onePlus8, samsungS20, samsungS20White, samsungS20Plus, samsungS20Ultra],
   tablet = ['tablet',ipad8Gen, ipadAir4Gen, ipadPro11, ipadPro129, ipadMini5, samsungTab84, samsungTabS7, samsungTabS7Plus, samsungTabS5E, lgGpad5, lenovoFlex],
   connected = ['connected',mifi6620, mifi8800, orbicSpeed, gizmoWatch2, watchSeries6, watchSeries6Steel, watchSeriesSE, galaxyWatch42, galaxyWatch46, galaxyWatchActive2, galaxyWatchActive2Black, galaxyWatch3, fossilWatch, montBlancWatch]
   ];
