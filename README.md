@@ -12,11 +12,11 @@
 * added business price guide
 * added potential VAPs generator
 * add ability to print quote
+* made phones into categories with right side dropdowns to simplify finding devices
 
 ## Future Updates
 * add more features to quote tool:
   * make table headers sticky
-  * make phones into categories with right side dropdowns to simplify finding devices
   * make popovers for promos work on consumer and business
   * add older plans
   * add ability to include existing lines and dpp in quote tool
