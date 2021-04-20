@@ -828,7 +828,7 @@ Note20Ultra = new phone('Note 20 Ultra 5G','Note20Ultra', 'note20', 'https://www
 ZFold2 = new phone('Galaxy Z Fold2 5G','ZFold2', 'zFold', 'https://www.phonescoop.com/articles/article.php?a=22302',  ['256GB'],'main',  [2000], [1300], true, 2.8, '?', [],  [], [], [])
 SamsungS20FE = new phone('Galaxy S20 FE 5G','SamsungS20FE', 's20', 'https://www.phonescoop.com/phones/phone.php?p=6326',  ['128GB'],'main',  [749.99], [330], false, 5.0, '?', [],  [], [], [])
 SamsungA71 = new phone('Galaxy A71 5G','SamsungA71', 'a71', 'https://www.phonescoop.com/phones/phone.php?p=6254',  ['128GB'],'main',  [665], [0], false, 5.6, '?', [],  [], [], [])
-SamsungA515G = new phone('Galaxy A51 5G','SamsungA515G', 'a515G', 'https://www.phonescoop.com/phones/phone.php?p=6245',  ['128GB'],'main',  [570], [270], false, 3.7, '?', [],  [], [], [])
+SamsungA515G = new phone('Galaxy A51 5G','SamsungA515G', 'a515G', 'https://www.phonescoop.com/phones/phone.php?p=6245',  ['128GB'],'main',  [570], [270], false, 4.3, '?', [],  [], [], [])
 SamsungA51 = new phone('Galaxy A51','SamsungA51', 'a51', 'https://www.phonescoop.com/phones/phone.php?p=6163',  ['128GB'],'main',  [420], [170], false, 3.7, '?', [],  [], [], [])
 SamsungA21 = new phone('Galaxy A21','SamsungA21', 'a21', 'https://www.phonescoop.com/phones/phone.php?p=6239#:~:text=This%20affordable%20phone%20is%20a,a%203.5mm%20headphone%20jack.',  ['32GB'],'main',  [270], [120], false, 3.7, '?', [],  [], [], [])
 SamsungA01 = new phone('Galaxy A01','SamsungA01', 'a11', 'https://www.phonescoop.com/phones/phone.php?p=6161',  ['32GB'],'main',  [185], [75], false, 4.3, '?', [],  [], [], [])
@@ -856,7 +856,7 @@ nokia2V = new phone('Nokia 2V Tella','nokia2V', 'nokia2V', 'https://www.phonesco
 KyocerDuraForce2 = new phone('Kyocera DuraForce Pro2','KyocerDuraForce2', 'duraforce', 'https://www.phonescoop.com/phones/phone.php?p=5895',  ['64GB'], 'main',  [480], [216], false, 5.2, '?', [],  [], [], []) 
 KyoceraUltra5G = new phone('Kyocera DuraForce Ultra 5G','KyoceraUltra5G', 'duraforce', 'https://www.phonescoop.com/phones/phone.php?p=6378', ['128GB'], 'main', [900], [400], false, '?', '?', [],  [], [], []);
 tcl105G = new phone('TCL 10 5G','tcl105G', 'tcl10', 'https://www.phonescoop.com/phones/phone.php?p=6350',  ['64GB'], 'main',  [440], [220], false, 4.5, '?', [],  [], [], []) 
-onePlus8 = new phone('OnePlus 8 5G', 'onePlus8', 'oneplus', 'https://www.phonescoop.com/phones/phone.php?p=6236',['128GB'], 'main', [820], [420], false, 13.0, '?', [], [], [], [])
+onePlus8 = new phone('OnePlus 8 5G', 'onePlus8', 'oneplus', 'https://www.phonescoop.com/phones/phone.php?p=6236',['128GB'], 'main', [820], [420], false, 7.8, '?', [], [], [], [])
 samsungS20 = new phone('Galaxy S20 5G','samsungS20', 's20', 'https://www.phonescoop.com/phones/phone.php?p=6212',  ['128GB'], 'main',  [1000], [500], true, 7.2, '?', [],  [], [], [])
 samsungS20White = new phone('Galaxy S20 5G (Cloud White)','samsungS20White', 's20White', 'https://www.phonescoop.com/phones/phone.php?p=6212',  ['128GB'], 'main',  [1000], [500], true, 8.7, '?', [],  [], [], [])
 samsungS20Plus = new phone('Galaxy S20+ 5G','samsungS20Plus', 's20', 'https://www.phonescoop.com/phones/phone.php?p=6211',  ['128GB', '512GB'], 'main',  [1200, 1350], [700, 850], true, 7.2, '?', [],  [], [], []) 
@@ -1120,7 +1120,6 @@ Note20.upgradepromos.push(upgTrade440);
 Note20Ultra.upgradepromos.push(upgTrade440);
 ZFold2.upgradepromos.push(upgTrade440);
 SamsungA515G.upgradepromos.push(upgTrade200);
-SamsungA515G.upgradepromos.push(vzVisa120);
 SamsungS20FE.upgradepromos.push(vzVisa120);
 SamsungA42.upgradepromos.push(upgTrade200);
 SamsungA42.upgradepromos.push(vzVisa120);
@@ -1152,8 +1151,6 @@ Note20.newpromos.push(switcher100);
 Note20Ultra.newpromos.push(switcher100);
 ZFold2.newpromos.push(switcher100);
 SamsungS20FE.newpromos.push(vzVisa120);
-SamsungA515G.newpromos.push(newA515G);
-SamsungA515G.newpromos.push(vzVisa120);
 SamsungA01.newpromos.push(entryLevelA01);
 SamsungA42.newpromos.push(newTCL279);
 SamsungA42.newpromos.push(vzVisa120);
@@ -1592,7 +1589,7 @@ montBlancWatch.newpromos.push(montBlancBMSM);
 //end
 //list of manufacturers/collapsables array of objects
 tableArray = [ ['BYOD', bYOD, existing],
-priority = ['priority', onePlus8, lgV60, motoEdge, motoRazr, nokia8V, lgWing, lgVelvet, motoOne ],
+priority = ['priority',  lgV60, motoEdge, motoRazr, nokia8V, lgWing, onePlus8, lgVelvet, motoOne ],
 apple = ['apple',Iphone12ProMax, Iphone12Pro, Iphone12, Iphone12Mini, IphoneSEF64, IphoneSEF128, IphoneSEF256, IphoneSE64, IphoneSE128, IphoneSE256, Iphone11, Iphone11Pro, Iphone11ProMax, IphoneXR, IphoneXR128],
 samsung = ['samsung',SamsungS21, SamsungS21Plus, SamsungS21Ultra, Note20, Note20Ultra, ZFold2, SamsungS20FE, SamsungA71, SamsungA515G, SamsungA51, SamsungA42, SamsungA21, , SamsungA01],
 lg = ['lg',lgV60, lgWing, lgVelvet, lgQ70, lgStylo6, lgK51],
