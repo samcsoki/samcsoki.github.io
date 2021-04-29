@@ -393,7 +393,7 @@
     .dropdown-submenu>.upwards {
         top: -100px;;
         left: 100%;
-        height: 140px;
+        min-height: 140px;
         margin-top: -6px;
         margin-left: -1px;
         -webkit-border-radius: 0 6px 6px 6px;
@@ -924,9 +924,11 @@ SamsungA515G = new phone('Galaxy A51 5G','SamsungA515G', 'a515G', 'https://www.p
 SamsungA51 = new phone('Galaxy A51','SamsungA51', 'a51', 'https://www.phonescoop.com/phones/phone.php?p=6163',  ['128GB'],'main',  [420], [170], false, 3.7, '?', [],  [], [], [])
 SamsungA21 = new phone('Galaxy A21','SamsungA21', 'a21', 'https://www.phonescoop.com/phones/phone.php?p=6239#:~:text=This%20affordable%20phone%20is%20a,a%203.5mm%20headphone%20jack.',  ['32GB'],'main',  [270], [120], false, 3.7, '?', [],  [], [], [])
 SamsungA01 = new phone('Galaxy A01','SamsungA01', 'a11', 'https://www.phonescoop.com/phones/phone.php?p=6161',  ['32GB'],'main',  [185], [75], false, 4.3, '?', [],  [], [], [])
+SamsungA02 = new phone('Galaxy A02s','SamsungA02', 'a11', 'https://www.gsmarena.com/samsung_galaxy_a02-10708.php',  ['32GB'],'main',  [185], [75], false, 4.3, '?', [],  [], [], [])
+SamsungA12 = new phone('Galaxy A12','SamsungA12', 'a11', 'https://www.phonescoop.com/phones/phone.php?p=6367',  ['32GB'],'main',  [210], [75], false, 4.1, '?', [],  [], [], [])
 SamsungA42 = new phone('Galaxy A42 5G', 'SamsungA42', 'a42', 'https://www.phonescoop.com/phones/phone.php?p=6342', ['128GB'], 'main', [430],[190], false, 4.7, '?', [], [], [], [])
 
-lgV60 = new phone('V60 ThinQ','lgV60', 'v60', 'https://www.phonescoop.com/phones/phone.php?p=6216',  ['128GB'], 'main',  [950], [450], false, 11.3, '?', [],  [], [], [])
+lgV60 = new phone('V60 ThinQ','lgV60', 'v60', 'https://www.phonescoop.com/phones/phone.php?p=6216',  ['128GB'], 'main',  [950], [450], false, 8.7, '?', [],  [], [], [])
 lgWing = new phone('Wing 5G','lgWing', 'wing', 'https://www.phonescoop.com/phones/phone.php?p=6331',  ['256GB'], 'main',  [1020], [570], true, 7.8, '?', [],  [], [], [])
 lgVelvet = new phone('Velvet 5G','lgVelvet', 'velvet', 'https://www.phonescoop.com/phones/phone.php?p=6253',  ['128GB'], 'main',  [720], [370], false, 6.0, '?', [],  [], [], [])
 lgQ70 = new phone('Q70','lgQ70', 'q70', 'https://www.phonescoop.com/phones/phone.php?p=6087',  ['64GB'], 'main',  [370], [120], false, 3.7, '?', [],  [], [], [])
@@ -948,7 +950,7 @@ nokia2V = new phone('Nokia 2V Tella','nokia2V', 'nokia2V', 'https://www.phonesco
 KyocerDuraForce2 = new phone('Kyocera DuraForce Pro2','KyocerDuraForce2', 'duraforce', 'https://www.phonescoop.com/phones/phone.php?p=5895',  ['64GB'], 'main',  [480], [216], false, 5.2, '?', [],  [], [], []) 
 KyoceraUltra5G = new phone('Kyocera DuraForce Ultra 5G','KyoceraUltra5G', 'duraforce', 'https://www.phonescoop.com/phones/phone.php?p=6378', ['128GB'], 'main', [900], [400], false, '?', '?', [],  [], [], []);
 tcl105G = new phone('TCL 10 5G','tcl105G', 'tcl10', 'https://www.phonescoop.com/phones/phone.php?p=6350',  ['64GB'], 'main',  [440], [220], false, 4.5, '?', [],  [], [], []) 
-onePlus8 = new phone('OnePlus 8 5G', 'onePlus8', 'oneplus', 'https://www.phonescoop.com/phones/phone.php?p=6236',['128GB'], 'main', [820], [420], false, 7.8, '?', [], [], [], [])
+onePlus8 = new phone('OnePlus 8 5G', 'onePlus8', 'oneplus', 'https://www.phonescoop.com/phones/phone.php?p=6236',['128GB'], 'main', [820], [420], false, 10.4, '?', [], [], [], [])
 samsungS20 = new phone('Galaxy S20 5G','samsungS20', 's20', 'https://www.phonescoop.com/phones/phone.php?p=6212',  ['128GB'], 'main',  [1000], [500], true, 7.2, '?', [],  [], [], [])
 samsungS20White = new phone('Galaxy S20 5G (Cloud White)','samsungS20White', 's20White', 'https://www.phonescoop.com/phones/phone.php?p=6212',  ['128GB'], 'main',  [1000], [500], true, 8.7, '?', [],  [], [], [])
 samsungS20Plus = new phone('Galaxy S20+ 5G','samsungS20Plus', 's20', 'https://www.phonescoop.com/phones/phone.php?p=6211',  ['128GB', '512GB'], 'main',  [1200, 1350], [700, 850], true, 7.2, '?', [],  [], [], []) 
@@ -1143,10 +1145,9 @@ const newMoto549 = [549.99,'anyUnl', '549.99 off', 'newMoto549','4/28','6/30', `
 const newPixel479 = [479.99,'anyUnl', '479.99 off', 'newPixel479','4/28','6/30', `<a target = 'blank' class = 'btn popovers anyUnl' href = 'https://infomanager.verizon.com/content/km/categories/promotions/350770.html'>479.99 off</a>`,`<a target = 'blank' class = 'btn popovers anyUnl' href = 'https://infomanager.verizon.com/content/km/categories/promotions/350758.html'>479.99 off</a>`];
 const newTCL279 = [279.99,'anyUnl', '279.99 off', 'newTCL279','4/28','6/30', `<a target = 'blank' class = 'btn popovers anyUnl' href = 'https://infomanager.verizon.com/content/km/categories/promotions/350770.html'>279.99 off</a>`,`<a target = 'blank' class = 'btn popovers anyUnl' href = 'https://infomanager.verizon.com/content/km/categories/promotions/350758.html'>279.99 off</a>`];
 const entryLevelMotoGPower = [129.99,'anyPlan', 'Entry Level Smartphone', 'entryLevelMotoGPower','4/1','6/30', `<a target = 'blank' class = 'btn popovers anyPlan' href = 'https://infomanager.verizon.com/content/km/categories/promotions/349803.html'>Entry Level Smartphone</a>`,`<a target = 'blank' class = 'btn popovers anyPlan' href = 'https://infomanager.verizon.com/content/km/categories/promotions/349714.html'>Entry Level Smartphone</a>`];
-const entryLevelMotoGStylus = [299.99,'anyPlan', 'Entry Level Smartphone', 'entryLevelMotoGStylus','4/1','6/30', `<a target = 'blank' class = 'btn popovers anyPlan' href = 'https://infomanager.verizon.com/content/km/categories/promotions/349803.html'>Entry Level Smartphone</a>`,`<a target = 'blank' class = 'btn popovers anyPlan' href = 'https://infomanager.verizon.com/content/km/categories/promotions/349714.html'>Entry Level Smartphone</a>`];
 const entryLevelPixel4A = [139.99,'anyPlan', 'Entry Level Smartphone', 'entryLevelPixel4A','4/1','6/30', `<a target = 'blank' class = 'btn popovers anyPlan' href = 'https://infomanager.verizon.com/content/km/categories/promotions/349803.html'>Entry Level Smartphone</a>`,`<a target = 'blank' class = 'btn popovers anyPlan' href = 'https://infomanager.verizon.com/content/km/categories/promotions/349714.html'>Entry Level Smartphone</a>`];
 const entryLevelStylo6 = [120,'anyPlan', 'Entry Level Smartphone', 'entryLevelStylo6','4/1','6/30', `<a target = 'blank' class = 'btn popovers anyPlan' href = 'https://infomanager.verizon.com/content/km/categories/promotions/349803.html'>Entry Level Smartphone</a>`,`<a target = 'blank' class = 'btn popovers anyPlan' href = 'https://infomanager.verizon.com/content/km/categories/promotions/349714.html'>Entry Level Smartphone</a>`];
-const entryLevelA01 = [149.99,'anyPlan', 'Entry Level Smartphone', 'entryLevelA01','4/1','6/30', `<a target = 'blank' class = 'btn popovers anyPlan' href = 'https://infomanager.verizon.com/content/km/categories/promotions/349803.html'>Entry Level Smartphone</a>`,`<a target = 'blank' class = 'btn popovers anyPlan' href = 'https://infomanager.verizon.com/content/km/categories/promotions/349714.html'>Entry Level Smartphone</a>`];
+const entryLevelA02 = [149.99,'anyPlan', 'Entry Level Smartphone', 'entryLevelA02','4/28','6/30', `<a target = 'blank' class = 'btn popovers anyPlan' href = 'https://infomanager.verizon.com/content/km/categories/promotions/349803.html'>Entry Level Smartphone</a>`,`<a target = 'blank' class = 'btn popovers anyPlan' href = 'https://infomanager.verizon.com/content/km/categories/promotions/349714.html'>Entry Level Smartphone</a>`];
 const entryLevelNokia2V = [168,'anyPlan', 'Entry Level Smartphone', 'entryLevelNokia2V', '4/1','6/30',`<a target = 'blank' class = 'btn popovers anyPlan' href = 'https://infomanager.verizon.com/content/km/categories/promotions/349803.html'>Entry Level Smartphone</a>`,`<a target = 'blank' class = 'btn popovers anyPlan' href = 'https://infomanager.verizon.com/content/km/categories/promotions/349714.html'>Entry Level Smartphone</a>`];
 const entryLevelK51 = [168,'anyPlan', 'Entry Level Smartphone', 'entryLevelK51', '4/1','6/30',`<a target = 'blank' class = 'btn popovers anyPlan' href = 'https://infomanager.verizon.com/content/km/categories/promotions/349803.html'>Entry Level Smartphone</a>`,`<a target = 'blank' class = 'btn popovers anyPlan' href = 'https://infomanager.verizon.com/content/km/categories/promotions/349714.html'>Entry Level Smartphone</a>`];
 const entryLevelSE64 = [399.99,'anyPlan', '$399.99 off', 'entryLevelSE64', '4/28','6/30',`<a target = 'blank' class = 'btn popovers anyPlan' href = 'https://infomanager.verizon.com/content/km/categories/promotions/350765.html'>$399.99 off</a>`,`<a target = 'blank' class = 'btn popovers anyUnl' href = 'https://infomanager.verizon.com/content/km/categories/promotions/350753.html'>$399.99 off</a>`];
@@ -1281,7 +1282,7 @@ Note20Ultra.newpromos.push(newanyDmg800);
 ZFold2.newpromos.push(newanyDmg800);
 SamsungS20FE.newpromos.push(vzVisa120);
 SamsungS20FE.newpromos.push(thoseWhoServe);
-SamsungA01.newpromos.push(entryLevelA01);
+SamsungA02.newpromos.push(entryLevelA02);
 SamsungA42.newpromos.push(newTCL279);
 SamsungA42.newpromos.push(vzVisa120);
 
@@ -1321,7 +1322,6 @@ motoEdge.newpromos.push(bogo1000);
 motoOne.newpromos.push(newMoto549);
 motoOne.newpromos.push(vzVisa120);
 motoGPower.newpromos.push(entryLevelMotoGPower);
-motoGStylus.newpromos.push(entryLevelMotoGStylus);
 
 //google promos
 
@@ -1518,7 +1518,7 @@ Note20.newpromos2yr.push(busNote202yr);
 Note20.newpromos2yr.push(busNoteTrade2yr);
 Note20Ultra.newpromos2yr.push(busNote202yr);
 Note20Ultra.newpromos2yr.push(busNoteTrade2yr);
-SamsungA01.newpromos.push(entryLevelA01);
+SamsungA02.newpromos.push(entryLevelA02);
 SamsungA42.newpromos.push(newTCL279);
 SamsungA42.newpromos.push(vzVisa120);
 
@@ -1572,7 +1572,6 @@ motoRazr.newpromos2yr.push(busMotoRazr);
 motoRazr.newpromos2yr.push(busMotoRazrTrade2yr);
 motoOne.newpromos2yr.push(busMotoOne2yr);
 motoGPower.newpromos.push(entryLevelMotoGPower);
-motoGStylus.newpromos.push(entryLevelMotoGStylus);
 
 //google promos
 
@@ -1691,9 +1690,9 @@ montBlancWatch.newpromos.push(montBlancBMSM);
 //end
 //list of manufacturers/collapsables array of objects
 tableArray = [ ['BYOD', bYOD, existing],
-priority = ['priority',  lgV60, motoEdge, motoRazr, nokia8V, lgWing, onePlus8, lgVelvet, motoOne ],
+priority = ['priority', onePlus8, lgV60, motoEdge, motoRazr, nokia8V, lgWing, lgVelvet, motoOne ],
 apple = ['apple',Iphone12ProMax, Iphone12Pro, Iphone12, Iphone12Mini, IphoneSEF64, IphoneSEF128, IphoneSEF256, IphoneSE64, IphoneSE128, IphoneSE256, Iphone11, Iphone11Pro, Iphone11ProMax, IphoneXR, IphoneXR128],
-samsung = ['samsung',SamsungS21, SamsungS21Plus, SamsungS21Ultra, Note20, Note20Ultra, ZFold2, SamsungA71, SamsungA515G, SamsungA51, SamsungA42, SamsungA21, , SamsungA01],
+samsung = ['samsung',SamsungS21, SamsungS21Plus, SamsungS21Ultra, Note20, Note20Ultra, ZFold2, SamsungA71, SamsungA515G, SamsungA42, SamsungA21,SamsungA12, SamsungA02],
 lg = ['lg',lgV60, lgWing, lgVelvet, lgQ70, lgStylo6, lgK51],
 moto = ['moto',motoOne, motoEdge, motoRazr, motoGPower, motoGStylus],
 google = ['google',pixel5, pixel4a5G, pixel4a],
